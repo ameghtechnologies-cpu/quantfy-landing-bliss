@@ -65,7 +65,7 @@ const Hero = () => {
                 <div>
                   <p className="font-medium text-sm text-foreground">{stock.name}</p>
                   <div className="flex gap-3 mt-1 text-xs text-muted-foreground">
-                    <span className="text-green-600">{stock.quality}</span>
+                    <span className="text-brand-sky">{stock.quality}</span>
                     <span className="text-brand-amber">{stock.growth}</span>
                     <span>{stock.pe}</span>
                   </div>
