@@ -69,7 +69,7 @@ const Pricing = () => {
               whileHover={{ y: -6 }}
               className={`relative p-6 rounded-2xl border transition-all duration-300 hover:shadow-xl ${
                 plan.popular
-                  ? "bg-primary text-primary-foreground border-primary shadow-lg shadow-primary/20 scale-[1.02]"
+                  ? "bg-card border-brand-sky/40 shadow-lg shadow-brand-sky/10 scale-[1.02] ring-1 ring-brand-sky/20"
                   : "bg-card border-border hover:border-brand-sky/30"
               }`}
             >

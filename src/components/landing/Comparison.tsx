@@ -42,7 +42,7 @@ const Comparison = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="p-8 rounded-2xl bg-destructive/5 border border-destructive/15"
+            className="p-8 rounded-2xl bg-muted/60 border border-border"
           >
             <h3 className="font-sans font-semibold text-lg text-foreground mb-6 flex items-center gap-2">
               <span className="w-8 h-8 rounded-lg bg-destructive/10 flex items-center justify-center">
