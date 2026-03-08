@@ -40,7 +40,7 @@ const Footer = () => {
 
         <div className="border-t border-border pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-xs text-muted-foreground">
-            © {new Date().getFullYear()} Quantfy. All rights reserved.
+            © {new Date().getFullYear()} Amegh Technologies. All rights reserved.
           </p>
           <div className="flex items-center gap-2">
             <span className="text-xs text-muted-foreground">Proprietary Scoring Logic</span>
