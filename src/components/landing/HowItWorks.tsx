@@ -49,6 +49,7 @@ const HowItWorks = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.12 }}
+              whileHover={{ y: -6, transition: { duration: 0.25 } }}
               className="relative group"
             >
               {/* Connector line */}
@@ -56,7 +57,7 @@ const HowItWorks = () => {
                 <div className="hidden lg:block absolute top-8 left-[calc(100%+0.5rem)] w-[calc(100%-1rem)] h-px bg-gradient-to-r from-border to-transparent" />
               )}
 
-              <div className="relative">
+              <div className="relative p-5 rounded-2xl bg-card/60 border border-border/50 group-hover:border-brand-sky/30 group-hover:shadow-md transition-all duration-300">
                 <motion.span
                   className="text-5xl font-serif font-bold bg-gradient-to-b from-brand-sky/30 to-transparent bg-clip-text text-transparent"
                   whileHover={{ scale: 1.1 }}
