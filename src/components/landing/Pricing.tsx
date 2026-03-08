@@ -43,8 +43,11 @@ const plans = [
 
 const Pricing = () => {
   return (
-    <section id="pricing" className="py-24 px-6">
-      <div className="max-w-5xl mx-auto">
+    <section id="pricing" className="py-24 px-6 relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-brand-sky/3 to-transparent" />
+      <div className="absolute bottom-0 left-1/4 w-80 h-80 bg-brand-amber/5 rounded-full blur-3xl" />
+
+      <div className="max-w-5xl mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -66,28 +69,29 @@ const Pricing = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.12 }}
-              whileHover={{ y: -6 }}
-              className={`relative p-6 rounded-2xl border transition-all duration-300 hover:shadow-xl ${
+              whileHover={{ y: -6, transition: { duration: 0.25 } }}
+              className={`relative p-6 rounded-2xl border transition-all duration-300 hover:shadow-xl overflow-hidden ${
                 plan.popular
                   ? "bg-card border-brand-sky/40 shadow-lg shadow-brand-sky/10 scale-[1.02] ring-1 ring-brand-sky/20"
                   : "bg-card border-border hover:border-brand-sky/30"
               }`}
             >
               {plan.popular && (
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                  <span className="inline-flex items-center gap-1 text-[10px] uppercase tracking-widest font-semibold bg-brand-amber text-foreground px-3 py-1 rounded-full">
-                    <Star size={10} /> Most Popular
-                  </span>
-                </div>
+                <>
+                  <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-sky via-brand-amber to-brand-sky" />
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                    <span className="inline-flex items-center gap-1 text-[10px] uppercase tracking-widest font-semibold bg-brand-amber text-foreground px-3 py-1 rounded-full">
+                      <Star size={10} /> Most Popular
+                    </span>
+                  </div>
+                </>
               )}
 
               <h3 className="font-sans font-semibold text-lg mb-1">{plan.name}</h3>
               <div className="mb-1">
                 <span className="text-3xl font-serif">{plan.price}</span>
               </div>
-              <p className={`text-xs mb-1 text-muted-foreground`}>
-                {plan.period}
-              </p>
+              <p className="text-xs mb-1 text-muted-foreground">{plan.period}</p>
               <p className={`text-xs mb-6 font-medium ${plan.popular ? "text-brand-amber" : "text-brand-sky"}`}>
                 {plan.perMonth}
               </p>
@@ -96,9 +100,7 @@ const Pricing = () => {
                 {plan.features.map((f) => (
                   <li key={f} className="flex items-start gap-2 text-sm">
                     <Check size={14} className={`mt-0.5 flex-shrink-0 ${plan.popular ? "text-brand-amber" : "text-brand-sky"}`} />
-                    <span className="text-muted-foreground">
-                      {f}
-                    </span>
+                    <span className="text-muted-foreground">{f}</span>
                   </li>
                 ))}
               </ul>

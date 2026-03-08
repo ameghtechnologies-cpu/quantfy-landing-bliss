@@ -7,25 +7,31 @@ const testimonials = [
     role: "Retail Investor, Mumbai",
     text: "Quantfy's DROPify score saves me hours of research. I can quickly shortlist quality stocks without drowning in spreadsheets.",
     highlight: "saves me hours",
+    accent: "from-brand-sky to-brand-sky/60",
   },
   {
     name: "Priya S.",
     role: "Swing Trader, Bangalore",
     text: "MomentoScope is a game-changer. I finally have a reliable momentum indicator that's designed for Indian markets.",
     highlight: "game-changer",
+    accent: "from-brand-amber to-brand-amber/60",
   },
   {
     name: "Amit D.",
     role: "Financial Advisor, Delhi",
     text: "The filtering and scoring system is incredibly well thought out. My clients love the clear, quantified approach to stock analysis.",
     highlight: "incredibly well thought out",
+    accent: "from-brand-sky to-brand-amber",
   },
 ];
 
 const Testimonials = () => {
   return (
-    <section className="py-24 px-6 bg-card/50">
-      <div className="max-w-5xl mx-auto">
+    <section className="py-24 px-6 relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-br from-brand-sky/5 via-transparent to-brand-amber/5" />
+      <div className="absolute top-0 right-1/4 w-64 h-64 bg-brand-amber/5 rounded-full blur-3xl" />
+
+      <div className="max-w-5xl mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -47,9 +53,10 @@ const Testimonials = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.12 }}
-              whileHover={{ y: -4 }}
-              className="group p-6 rounded-2xl bg-background border border-border hover:border-brand-amber/30 transition-all duration-300 hover:shadow-lg relative overflow-hidden"
+              whileHover={{ y: -4, transition: { duration: 0.25 } }}
+              className="group p-6 rounded-2xl bg-card border border-border hover:border-brand-amber/30 transition-all duration-300 hover:shadow-lg relative overflow-hidden"
             >
+              <div className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r ${t.accent}`} />
               <div className="absolute top-4 right-4 opacity-5 group-hover:opacity-10 transition-opacity">
                 <Quote size={48} />
               </div>
@@ -59,7 +66,7 @@ const Testimonials = () => {
                   "{t.text}"
                 </p>
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-brand-sky to-brand-amber flex items-center justify-center text-primary-foreground text-sm font-semibold">
+                  <div className={`w-10 h-10 rounded-full bg-gradient-to-br ${t.accent} flex items-center justify-center text-primary-foreground text-sm font-semibold`}>
                     {t.name[0]}
                   </div>
                   <div>
