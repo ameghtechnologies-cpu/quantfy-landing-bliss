@@ -1,5 +1,6 @@
-import { motion } from "framer-motion";
-import { Award, Activity, TrendingUp, Trophy } from "lucide-react";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Award, Activity, TrendingUp, Trophy, ChevronLeft, ChevronRight } from "lucide-react";
 
 const scores = [
   {
@@ -8,9 +9,9 @@ const scores = [
     subtitle: "Quality at a Glance",
     description:
       "A composite score out of 100 combining quality, growth, valuation & shareholding from 50+ data points. Instantly understand if a stock deserves your attention.",
-    gradient: "from-brand-amber/15 to-brand-amber/5",
+    gradient: "from-brand-amber/20 via-brand-amber/5 to-transparent",
     iconColor: "text-brand-amber",
-    borderHover: "hover:border-brand-amber/40",
+    bgAccent: "bg-brand-amber/8",
   },
   {
     icon: Activity,
@@ -18,9 +19,9 @@ const scores = [
     subtitle: "Momentum Intelligence",
     description:
       "Track weekly momentum metrics to spot trend shifts and entry/exit opportunities. Combines price action, volume, and relative strength into a clear weekly signal.",
-    gradient: "from-brand-sky/15 to-brand-sky/5",
+    gradient: "from-brand-sky/20 via-brand-sky/5 to-transparent",
     iconColor: "text-brand-sky",
-    borderHover: "hover:border-brand-sky/40",
+    bgAccent: "bg-brand-sky/8",
   },
   {
     icon: TrendingUp,
@@ -28,9 +29,9 @@ const scores = [
     subtitle: "Technical Strength",
     description:
       "Measures a stock's technical health using moving averages, breakout patterns, and trend consistency. A quick gauge of whether price momentum supports fundamentals.",
-    gradient: "from-brand-amber/15 to-brand-navy/5",
+    gradient: "from-brand-amber/20 via-brand-navy/5 to-transparent",
     iconColor: "text-brand-amber",
-    borderHover: "hover:border-brand-amber/40",
+    bgAccent: "bg-brand-amber/8",
   },
   {
     icon: Trophy,
@@ -38,13 +39,32 @@ const scores = [
     subtitle: "Relative Ranking",
     description:
       "Ranks every stock against its peers combining all scores into a single leaderboard position. See where a company stands in its sector and across the entire market.",
-    gradient: "from-brand-sky/15 to-brand-navy/5",
+    gradient: "from-brand-sky/20 via-brand-navy/5 to-transparent",
     iconColor: "text-brand-sky",
-    borderHover: "hover:border-brand-sky/40",
+    bgAccent: "bg-brand-sky/8",
   },
 ];
 
 const UniqueScores = () => {
+  const [active, setActive] = useState(0);
+  const [direction, setDirection] = useState(0);
+
+  const go = (idx: number) => {
+    setDirection(idx > active ? 1 : -1);
+    setActive(idx);
+  };
+
+  const prev = () => go(active === 0 ? scores.length - 1 : active - 1);
+  const next = () => go(active === scores.length - 1 ? 0 : active + 1);
+
+  const score = scores[active];
+
+  const variants = {
+    enter: (d: number) => ({ x: d > 0 ? 300 : -300, opacity: 0 }),
+    center: { x: 0, opacity: 1 },
+    exit: (d: number) => ({ x: d > 0 ? -300 : 300, opacity: 0 }),
+  };
+
   return (
     <section className="py-24 px-6">
       <div className="max-w-5xl mx-auto">
@@ -65,43 +85,82 @@ const UniqueScores = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {scores.map((score, i) => (
-            <motion.div
-              key={score.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              whileHover={{ y: -4, transition: { duration: 0.25 } }}
-              className={`group relative rounded-2xl border border-border bg-card ${score.borderHover} transition-all duration-300 hover:shadow-lg overflow-hidden`}
-            >
-              <div className={`absolute inset-0 bg-gradient-to-br ${score.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
+        {/* Carousel Window */}
+        <div className="relative rounded-2xl border border-border bg-card overflow-hidden shadow-lg">
+          {/* Background gradient accent */}
+          <div className={`absolute inset-0 bg-gradient-to-br ${score.gradient} transition-all duration-500`} />
 
-              {/* Content */}
-              <div className="relative z-10 p-6 md:p-8">
-                <div className="flex items-start gap-4 mb-4">
-                  <div className="w-12 h-12 rounded-xl bg-muted flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                    <score.icon className={`w-6 h-6 ${score.iconColor}`} />
+          {/* Arrows */}
+          <button
+            onClick={prev}
+            className="absolute left-3 md:left-5 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-background/80 backdrop-blur border border-border flex items-center justify-center hover:bg-background transition-colors"
+          >
+            <ChevronLeft className="w-5 h-5 text-foreground" />
+          </button>
+          <button
+            onClick={next}
+            className="absolute right-3 md:right-5 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-background/80 backdrop-blur border border-border flex items-center justify-center hover:bg-background transition-colors"
+          >
+            <ChevronRight className="w-5 h-5 text-foreground" />
+          </button>
+
+          {/* Content */}
+          <div className="relative z-10 min-h-[420px] md:min-h-[380px] flex items-center">
+            <AnimatePresence mode="wait" custom={direction}>
+              <motion.div
+                key={active}
+                custom={direction}
+                variants={variants}
+                initial="enter"
+                animate="center"
+                exit="exit"
+                transition={{ duration: 0.35, ease: "easeInOut" }}
+                className="w-full px-10 md:px-20 py-12 md:py-16"
+              >
+                <div className="flex flex-col md:flex-row gap-8 items-center">
+                  {/* Text side */}
+                  <div className="flex-1 text-center md:text-left">
+                    <div className="flex items-center gap-3 mb-4 justify-center md:justify-start">
+                      <div className={`w-14 h-14 rounded-xl ${score.bgAccent} flex items-center justify-center`}>
+                        <score.icon className={`w-7 h-7 ${score.iconColor}`} />
+                      </div>
+                      <div>
+                        <h3 className="font-sans font-bold text-foreground text-xl">{score.title}</h3>
+                        <span className="text-xs font-medium text-muted-foreground uppercase tracking-wide">
+                          {score.subtitle}
+                        </span>
+                      </div>
+                    </div>
+                    <p className="text-muted-foreground leading-relaxed max-w-md">
+                      {score.description}
+                    </p>
                   </div>
-                  <div>
-                    <h3 className="font-sans font-bold text-foreground text-lg">{score.title}</h3>
-                    <span className="text-xs font-medium text-muted-foreground uppercase tracking-wide">
-                      {score.subtitle}
-                    </span>
+
+                  {/* Screenshot placeholder */}
+                  <div className="flex-1 max-w-sm w-full">
+                    <div className="rounded-xl bg-muted/50 border border-border/50 aspect-[4/3] flex items-center justify-center">
+                      <span className="text-xs text-muted-foreground/60">Screenshot coming soon</span>
+                    </div>
                   </div>
                 </div>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  {score.description}
-                </p>
+              </motion.div>
+            </AnimatePresence>
+          </div>
 
-                {/* Placeholder for screenshot */}
-                <div className="mt-5 rounded-xl bg-muted/50 border border-border/50 h-40 flex items-center justify-center">
-                  <span className="text-xs text-muted-foreground/60">Screenshot coming soon</span>
-                </div>
-              </div>
-            </motion.div>
-          ))}
+          {/* Dots */}
+          <div className="relative z-10 flex items-center justify-center gap-2 pb-6">
+            {scores.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => go(i)}
+                className={`rounded-full transition-all duration-300 ${
+                  i === active
+                    ? "w-8 h-2.5 bg-brand-sky"
+                    : "w-2.5 h-2.5 bg-muted-foreground/30 hover:bg-muted-foreground/50"
+                }`}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>
