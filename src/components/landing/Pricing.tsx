@@ -108,7 +108,7 @@ const Pricing = () => {
                 whileTap={{ scale: 0.98 }}
                 className={`w-full py-3 rounded-full text-sm font-medium transition-all duration-300 ${
                   plan.popular
-                    ? "bg-primary-foreground text-primary hover:shadow-md"
+                    ? "bg-brand-sky text-foreground hover:shadow-md hover:shadow-brand-sky/20"
                     : "bg-primary text-primary-foreground hover:shadow-md hover:shadow-primary/20"
                 }`}
               >
