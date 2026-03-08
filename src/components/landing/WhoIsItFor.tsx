@@ -101,7 +101,24 @@ const WhoIsItFor = () => {
             <p className="text-sm text-muted-foreground leading-relaxed">Understand fundamentals through intuitive scores and visuals.</p>
           </motion.div>
 
-          {/* Center gap cell (row 2, col 6-7) is intentionally empty for spacing */}
+          {/* Center image in the interlocking gap */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.12 }}
+            className="col-start-6 col-end-8 row-start-2 row-end-3 rounded-2xl overflow-hidden flex items-center justify-center"
+            style={{
+              background: "linear-gradient(135deg, hsl(var(--brand-sky) / 0.1), hsl(var(--brand-amber) / 0.1))",
+              border: "1px solid hsl(var(--border) / 0.2)",
+            }}
+          >
+            <img
+              src="/placeholder.svg"
+              alt="Quantfy platform preview"
+              className="w-full h-full object-cover"
+            />
+          </motion.div>
 
         </div>
       </div>
