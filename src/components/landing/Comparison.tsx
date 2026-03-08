@@ -19,8 +19,12 @@ const newWay = [
 
 const Comparison = () => {
   return (
-    <section className="py-24 px-6">
-      <div className="max-w-5xl mx-auto">
+    <section className="py-24 px-6 relative overflow-hidden">
+      {/* Subtle background accent */}
+      <div className="absolute top-0 left-0 w-72 h-72 bg-brand-amber/5 rounded-full blur-3xl -translate-x-1/2" />
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-brand-sky/5 rounded-full blur-3xl translate-x-1/3" />
+
+      <div className="max-w-5xl mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -42,8 +46,9 @@ const Comparison = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="p-8 rounded-2xl bg-muted/60 border border-border"
+            className="p-8 rounded-2xl bg-card border border-border/80 relative overflow-hidden"
           >
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-destructive/30 to-transparent" />
             <h3 className="font-sans font-semibold text-lg text-foreground mb-6 flex items-center gap-2">
               <span className="w-8 h-8 rounded-lg bg-destructive/10 flex items-center justify-center">
                 <X size={16} className="text-destructive" />
@@ -60,7 +65,7 @@ const Comparison = () => {
                   transition={{ delay: i * 0.08 }}
                   className="flex items-start gap-3 text-sm text-muted-foreground"
                 >
-                  <X size={14} className="text-destructive/60 mt-0.5 flex-shrink-0" />
+                  <X size={14} className="text-destructive/50 mt-0.5 flex-shrink-0" />
                   {item}
                 </motion.li>
               ))}
@@ -75,6 +80,7 @@ const Comparison = () => {
             transition={{ duration: 0.6 }}
             className="p-8 rounded-2xl bg-brand-sky/5 border border-brand-sky/15 relative overflow-hidden"
           >
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-sky/50 to-brand-amber/30" />
             <div className="absolute top-0 right-0 w-32 h-32 bg-brand-sky/5 rounded-full blur-2xl" />
             <h3 className="font-sans font-semibold text-lg text-foreground mb-6 flex items-center gap-2 relative z-10">
               <span className="w-8 h-8 rounded-lg bg-brand-sky/10 flex items-center justify-center">

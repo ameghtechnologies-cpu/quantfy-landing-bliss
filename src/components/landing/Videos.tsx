@@ -21,8 +21,11 @@ const videos = [
 
 const Videos = () => {
   return (
-    <section id="videos" className="py-24 px-6">
-      <div className="max-w-5xl mx-auto">
+    <section id="videos" className="py-24 px-6 relative overflow-hidden">
+      <div className="absolute top-1/2 left-0 w-80 h-80 bg-brand-sky/5 rounded-full blur-3xl -translate-y-1/2 -translate-x-1/2" />
+      <div className="absolute top-1/4 right-0 w-64 h-64 bg-brand-amber/5 rounded-full blur-3xl translate-x-1/3" />
+
+      <div className="max-w-5xl mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -38,14 +41,14 @@ const Videos = () => {
           </p>
         </motion.div>
 
-        {/* Featured video — large */}
+        {/* Featured video */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="mb-8"
         >
-          <div className="relative rounded-2xl overflow-hidden bg-card border border-border shadow-lg">
+          <div className="relative rounded-2xl overflow-hidden bg-card border border-border shadow-lg hover:shadow-xl transition-shadow duration-300">
             <div className="aspect-video">
               <iframe
                 src={`https://www.youtube.com/embed/${videos[0].youtubeId}`}
@@ -55,7 +58,7 @@ const Videos = () => {
                 className="w-full h-full"
               />
             </div>
-            <div className="p-6">
+            <div className="p-6 bg-gradient-to-r from-card to-brand-sky/5">
               <h3 className="font-sans font-semibold text-foreground mb-1">{videos[0].title}</h3>
               <p className="text-sm text-muted-foreground">{videos[0].description}</p>
             </div>
@@ -86,7 +89,7 @@ const Videos = () => {
                 <div className="absolute inset-0 flex items-center justify-center bg-foreground/10 group-hover:bg-foreground/20 transition-colors">
                   <motion.div
                     whileHover={{ scale: 1.1 }}
-                    className="w-14 h-14 rounded-full bg-primary/90 backdrop-blur-sm flex items-center justify-center shadow-lg"
+                    className="w-14 h-14 rounded-full bg-brand-sky/90 backdrop-blur-sm flex items-center justify-center shadow-lg"
                   >
                     <Play size={20} className="text-primary-foreground ml-0.5" />
                   </motion.div>
