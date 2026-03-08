@@ -1,28 +1,25 @@
 import { motion } from "framer-motion";
-import { Search, BarChart3, TrendingUp, Filter, PieChart, Shield, Sparkles, Zap } from "lucide-react";
+import { Search, Filter, PieChart, Shield, Sparkles, Zap, BarChart3, ArrowUpDown, GitCompareArrows } from "lucide-react";
 
 const features = [
   {
     icon: Search,
     title: "Universe Search",
     description: "Browse and search across all listed Indian companies, ETFs & indices in one place.",
-    className: "col-span-2 row-span-2",
     gradient: "from-brand-sky/20 to-brand-navy/10",
     iconColor: "text-brand-sky",
   },
   {
-    icon: BarChart3,
-    title: "DROPify Score",
-    description: "A composite score out of 100 combining quality, growth, valuation & shareholding from 50+ data points.",
-    className: "col-span-1 row-span-1",
+    icon: ArrowUpDown,
+    title: "Sort Options",
+    description: "Sort companies by DROPify score, market cap, PE ratio, returns and more to find the best picks fast.",
     gradient: "from-brand-amber/15 to-brand-amber/5",
     iconColor: "text-brand-amber",
   },
   {
-    icon: TrendingUp,
-    title: "MomentoScope",
-    description: "Track weekly momentum metrics to spot trend shifts and entry/exit opportunities.",
-    className: "col-span-1 row-span-1",
+    icon: GitCompareArrows,
+    title: "Transition Filter",
+    description: "Track quarterly rating changes — find stocks upgrading or downgrading in quality and momentum.",
     gradient: "from-brand-sky/15 to-accent/5",
     iconColor: "text-brand-sky",
   },
@@ -30,7 +27,6 @@ const features = [
     icon: Filter,
     title: "Smart Filters",
     description: "Filter by index, sector, industry, PE bands, quality tiers, growth labels and more.",
-    className: "col-span-1 row-span-1",
     gradient: "from-brand-navy/15 to-brand-sky/5",
     iconColor: "text-brand-amber",
   },
@@ -38,7 +34,6 @@ const features = [
     icon: PieChart,
     title: "Deep Analysis",
     description: "Profitability, solvency, cash flow, balance sheet, income quality — all in one view.",
-    className: "col-span-2 row-span-1",
     gradient: "from-brand-amber/10 to-brand-sky/10",
     iconColor: "text-brand-sky",
   },
@@ -46,7 +41,6 @@ const features = [
     icon: Shield,
     title: "Shareholding Insights",
     description: "Promoter, FII, DII & public holding trends with pledge tracking across quarters.",
-    className: "col-span-1 row-span-1",
     gradient: "from-brand-sky/20 to-brand-sky/5",
     iconColor: "text-brand-amber",
   },
@@ -94,8 +88,8 @@ const Features = () => {
           </p>
         </motion.div>
 
-        {/* Bento grid layout */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 auto-rows-[140px] md:auto-rows-[160px] mb-20">
+        {/* Equal card grid - responsive */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-20">
           {features.map((feature, i) => (
             <motion.div
               key={feature.title}
@@ -104,7 +98,7 @@ const Features = () => {
               viewport={{ once: true }}
               transition={{ delay: i * 0.08 }}
               whileHover={{ y: -4, scale: 1.02 }}
-              className={`${feature.className} relative rounded-2xl border border-border/60 bg-gradient-to-br ${feature.gradient} p-6 flex flex-col justify-end overflow-hidden group cursor-default`}
+              className={`relative rounded-2xl border border-border/60 bg-gradient-to-br ${feature.gradient} p-6 flex flex-col justify-end overflow-hidden group cursor-default min-h-[160px]`}
             >
               <div className="absolute top-4 right-4 w-10 h-10 rounded-xl bg-background/60 backdrop-blur-sm flex items-center justify-center border border-border/40 group-hover:bg-brand-sky/10 transition-colors">
                 <feature.icon size={18} className={feature.iconColor} />

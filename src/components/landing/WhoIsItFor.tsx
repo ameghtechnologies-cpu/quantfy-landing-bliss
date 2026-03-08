@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { TrendingUp, BarChart3, BookOpen, Users, Briefcase } from "lucide-react";
+import { TrendingUp, BarChart3, BookOpen, Briefcase } from "lucide-react";
 
 const personas = [
   {
@@ -30,13 +30,6 @@ const personas = [
     gradient: "from-brand-amber/20 to-brand-amber/5",
     iconColor: "text-brand-amber",
   },
-  {
-    title: "Investment Clubs",
-    description: "Share analysis and compare picks with your group.",
-    icon: Users,
-    gradient: "from-brand-sky/20 to-brand-sky/5",
-    iconColor: "text-brand-sky",
-  },
 ];
 
 const WhoIsItFor = () => {
@@ -57,7 +50,7 @@ const WhoIsItFor = () => {
           </p>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {personas.map((persona, i) => (
             <motion.div
               key={persona.title}
