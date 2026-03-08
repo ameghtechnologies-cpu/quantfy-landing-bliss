@@ -26,7 +26,7 @@ const WhoIsItFor = () => {
             viewport={{ once: true }}
             transition={{ delay: 0 }}
             whileHover={{ y: -4, transition: { duration: 0.2 } }}
-            className="col-span-5 row-span-2 rounded-2xl p-5 flex flex-col justify-end overflow-hidden relative"
+            className="col-span-4 row-span-2 rounded-2xl p-5 flex flex-col justify-end overflow-hidden relative"
             style={{
               background: "linear-gradient(135deg, hsl(var(--brand-sky) / 0.25), hsl(var(--brand-navy) / 0.15))",
               border: "1px solid hsl(var(--border) / 0.3)",
