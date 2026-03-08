@@ -1,4 +1,4 @@
-import { motion, useMotionValue, useTransform, animate } from "framer-motion";
+import { motion, animate } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
 const stats = [
@@ -24,8 +24,7 @@ function AnimatedCounter({ value, suffix }: { value: number; suffix: string }) {
 
   useEffect(() => {
     if (!inView) return;
-    const mv = useMotionValue(0);
-    const controls = animate(mv, value, {
+    const controls = animate(0, value, {
       duration: 1.5,
       ease: "easeOut",
       onUpdate: (v) => setDisplay(Math.round(v)),
