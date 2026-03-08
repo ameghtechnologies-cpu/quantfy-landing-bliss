@@ -19,7 +19,6 @@ const plans = [
     price: "₹5,500",
     period: "for 6 months",
     perMonth: "₹917/mo",
-    popular: true,
     features: [
       "Everything in 3-month plan",
       "Deep stock analysis",
@@ -32,6 +31,7 @@ const plans = [
     price: "₹10,000",
     period: "for 1 year",
     perMonth: "₹833/mo",
+    popular: true,
     features: [
       "Everything in 6-month plan",
       "Portfolio & Watchlist tools",
