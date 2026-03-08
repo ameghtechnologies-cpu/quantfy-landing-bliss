@@ -19,15 +19,16 @@ const WhoIsItFor = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-12 auto-rows-[130px] gap-4">
+        {/* Interlocking grid: Retail(tall-left) + Swing(short-top-right) | Financial(short-bottom-left) + Students(tall-right) */}
+        <div className="grid grid-cols-12 grid-rows-[140px_140px_140px] gap-3">
 
-          {/* Retail Investors — tall left (row 1-2, col 1-6) */}
+          {/* Retail Investors — Row 1-2, Col 1-7 (tall left) */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             whileHover={{ y: -3, transition: { duration: 0.2 } }}
-            className="col-span-12 sm:col-span-6 row-span-2 rounded-2xl bg-gradient-to-br from-brand-sky/15 via-brand-sky/5 to-accent/5 border border-border/50 p-6 flex flex-col relative overflow-hidden group"
+            className="col-span-12 sm:col-span-7 sm:row-span-2 rounded-2xl bg-gradient-to-br from-brand-sky/14 via-brand-sky/6 to-accent/4 border border-border/50 p-6 flex flex-col justify-center relative overflow-hidden group"
           >
             <div className="flex items-center gap-3 mb-2">
               <div className="w-9 h-9 rounded-lg bg-background/80 flex items-center justify-center border border-border/30">
@@ -35,20 +36,17 @@ const WhoIsItFor = () => {
               </div>
               <h3 className="font-sans font-bold text-foreground text-lg">Retail Investors</h3>
             </div>
-            <p className="text-sm text-muted-foreground leading-relaxed mb-3">Make confident stock picks backed by data, not noise.</p>
-            <div className="flex-1 rounded-xl bg-background/50 border border-border/20 flex items-center justify-center">
-              <span className="text-xs text-muted-foreground/40">Image placeholder</span>
-            </div>
+            <p className="text-sm text-muted-foreground leading-relaxed">Make confident stock picks backed by data, not noise.</p>
           </motion.div>
 
-          {/* Swing Traders — top-right text (row 1, col 7-12) */}
+          {/* Swing Traders — Row 1, Col 8-12 (short top-right) */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.06 }}
             whileHover={{ y: -3, transition: { duration: 0.2 } }}
-            className="col-span-12 sm:col-span-6 row-span-2 rounded-2xl bg-gradient-to-br from-brand-amber/15 via-brand-amber/5 to-brand-sky/5 border border-border/50 p-6 flex flex-col relative overflow-hidden group"
+            className="col-span-12 sm:col-span-5 sm:row-span-1 rounded-2xl bg-gradient-to-br from-brand-amber/14 via-brand-amber/6 to-brand-sky/4 border border-border/50 p-6 flex flex-col justify-center relative overflow-hidden group"
           >
             <div className="flex items-center gap-3 mb-2">
               <div className="w-9 h-9 rounded-lg bg-background/80 flex items-center justify-center border border-border/30">
@@ -56,46 +54,43 @@ const WhoIsItFor = () => {
               </div>
               <h3 className="font-sans font-bold text-foreground text-lg">Swing Traders</h3>
             </div>
-            <p className="text-sm text-muted-foreground leading-relaxed mb-3">Spot momentum shifts early with MomentoScope.</p>
-            <div className="flex-1 rounded-xl bg-background/50 border border-border/20 flex items-center justify-center">
-              <span className="text-xs text-muted-foreground/40">Image placeholder</span>
-            </div>
+            <p className="text-sm text-muted-foreground leading-relaxed">Spot momentum shifts early with MomentoScope.</p>
           </motion.div>
 
-          {/* Financial Advisors — bottom-left (row 3, col 1-6) */}
+          {/* Students & Learners — Row 2-3, Col 8-12 (tall right) */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.12 }}
             whileHover={{ y: -3, transition: { duration: 0.2 } }}
-            className="col-span-12 sm:col-span-6 row-span-1 rounded-2xl bg-gradient-to-br from-brand-amber/12 via-brand-sky/5 to-accent/5 border border-border/50 p-5 flex items-center gap-4 relative overflow-hidden group"
+            className="col-span-12 sm:col-span-5 sm:row-span-2 rounded-2xl bg-gradient-to-br from-brand-sky/12 via-accent/6 to-brand-amber/4 border border-border/50 p-6 flex flex-col justify-center relative overflow-hidden group"
           >
-            <div className="w-9 h-9 rounded-lg bg-background/80 flex items-center justify-center border border-border/30 shrink-0">
-              <Briefcase className="w-4 h-4 text-brand-amber" />
+            <div className="flex items-center gap-3 mb-2">
+              <div className="w-9 h-9 rounded-lg bg-background/80 flex items-center justify-center border border-border/30">
+                <BookOpen className="w-4 h-4 text-brand-sky" />
+              </div>
+              <h3 className="font-sans font-bold text-foreground text-lg">Students & Learners</h3>
             </div>
-            <div>
-              <h3 className="font-sans font-bold text-foreground text-lg mb-0.5">Financial Advisors</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">Screen and shortlist stocks faster for your clients.</p>
-            </div>
+            <p className="text-sm text-muted-foreground leading-relaxed">Understand fundamentals through intuitive scores and visuals.</p>
           </motion.div>
 
-          {/* Students & Learners — bottom-right (row 3, col 7-12) */}
+          {/* Financial Advisors — Row 3, Col 1-7 (short bottom-left) */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.18 }}
             whileHover={{ y: -3, transition: { duration: 0.2 } }}
-            className="col-span-12 sm:col-span-6 row-span-1 rounded-2xl bg-gradient-to-br from-brand-sky/12 via-accent/5 to-brand-amber/5 border border-border/50 p-5 flex items-center gap-4 relative overflow-hidden group"
+            className="col-span-12 sm:col-span-7 sm:row-span-1 rounded-2xl bg-gradient-to-br from-brand-amber/12 via-brand-sky/6 to-accent/4 border border-border/50 p-6 flex flex-col justify-center relative overflow-hidden group"
           >
-            <div className="w-9 h-9 rounded-lg bg-background/80 flex items-center justify-center border border-border/30 shrink-0">
-              <BookOpen className="w-4 h-4 text-brand-sky" />
+            <div className="flex items-center gap-3 mb-2">
+              <div className="w-9 h-9 rounded-lg bg-background/80 flex items-center justify-center border border-border/30">
+                <Briefcase className="w-4 h-4 text-brand-amber" />
+              </div>
+              <h3 className="font-sans font-bold text-foreground text-lg">Financial Advisors</h3>
             </div>
-            <div>
-              <h3 className="font-sans font-bold text-foreground text-lg mb-0.5">Students & Learners</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">Understand fundamentals through intuitive scores and visuals.</p>
-            </div>
+            <p className="text-sm text-muted-foreground leading-relaxed">Screen and shortlist stocks faster for your clients.</p>
           </motion.div>
         </div>
       </div>
