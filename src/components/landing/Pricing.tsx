@@ -79,8 +79,8 @@ const Pricing = () => {
               {plan.popular && (
                 <>
                   <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-sky via-brand-amber to-brand-sky" />
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                    <span className="inline-flex items-center gap-1 text-[10px] uppercase tracking-widest font-semibold bg-brand-amber text-foreground px-3 py-1 rounded-full">
+                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-10">
+                    <span className="inline-flex items-center gap-1 text-[10px] uppercase tracking-widest font-semibold bg-brand-amber text-foreground px-4 py-1.5 rounded-full shadow-md">
                       <Star size={10} /> Most Popular
                     </span>
                   </div>
