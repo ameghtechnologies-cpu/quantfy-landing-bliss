@@ -45,9 +45,9 @@ const Hero = () => {
           {/* Mock stock cards */}
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center gap-3">
-              <div className="w-2 h-2 rounded-full bg-brand-red" />
+              <div className="w-2 h-2 rounded-full bg-destructive" />
               <div className="w-2 h-2 rounded-full bg-brand-amber" />
-              <div className="w-2 h-2 rounded-full bg-green-500" />
+              <div className="w-2 h-2 rounded-full bg-brand-sky" />
             </div>
             <div className="text-xs text-muted-foreground font-mono">Universe</div>
           </div>
