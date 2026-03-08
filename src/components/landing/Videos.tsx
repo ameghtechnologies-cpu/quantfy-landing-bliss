@@ -1,37 +1,35 @@
 import { motion } from "framer-motion";
-import { Play } from "lucide-react";
+import { Play, ExternalLink } from "lucide-react";
 
 const videos = [
   {
-    title: "Getting Started with Quantfy",
-    description: "Learn how to navigate the Universe and find your first stocks.",
-    thumbnail: "https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg",
-    url: "https://youtube.com/watch?v=dQw4w9WgXcQ",
+    title: "Quantfy App Demo",
+    description: "See the full walkthrough of how Quantfy helps you screen and analyse Indian stocks.",
+    youtubeId: "oGNcnV_3Pko",
   },
   {
     title: "Understanding DROPify Score",
-    description: "How we combine quality, growth, valuation & shareholding into one score.",
-    thumbnail: "https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg",
-    url: "https://youtube.com/watch?v=dQw4w9WgXcQ",
+    description: "How we combine quality, growth, valuation & shareholding into one composite score.",
+    youtubeId: "dQw4w9WgXcQ",
   },
   {
     title: "MomentoScope Deep Dive",
-    description: "Track momentum trends and spot the right entry points.",
-    thumbnail: "https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg",
-    url: "https://youtube.com/watch?v=dQw4w9WgXcQ",
+    description: "Track momentum trends and spot the right entry and exit points.",
+    youtubeId: "dQw4w9WgXcQ",
   },
 ];
 
 const Videos = () => {
   return (
-    <section id="videos" className="py-24 px-6 bg-card/50">
+    <section id="videos" className="py-24 px-6">
       <div className="max-w-5xl mx-auto">
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="text-center mb-16"
         >
+          <span className="text-xs font-medium uppercase tracking-widest text-brand-sky mb-4 block">Watch</span>
           <h2 className="text-3xl md:text-4xl font-serif text-foreground mb-4">
             See Quantfy in action
           </h2>
@@ -40,34 +38,66 @@ const Videos = () => {
           </p>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {videos.map((video, i) => (
+        {/* Featured video — large */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-8"
+        >
+          <div className="relative rounded-2xl overflow-hidden bg-card border border-border shadow-lg">
+            <div className="aspect-video">
+              <iframe
+                src={`https://www.youtube.com/embed/${videos[0].youtubeId}`}
+                title={videos[0].title}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="w-full h-full"
+              />
+            </div>
+            <div className="p-6">
+              <h3 className="font-sans font-semibold text-foreground mb-1">{videos[0].title}</h3>
+              <p className="text-sm text-muted-foreground">{videos[0].description}</p>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Other videos */}
+        <div className="grid sm:grid-cols-2 gap-6">
+          {videos.slice(1).map((video, i) => (
             <motion.a
               key={video.title}
-              href={video.url}
+              href={`https://youtube.com/watch?v=${video.youtubeId}`}
               target="_blank"
               rel="noopener noreferrer"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.08 }}
-              className="group block rounded-2xl overflow-hidden bg-card border border-border hover:border-brand-sky/30 transition-colors"
+              transition={{ delay: i * 0.1 }}
+              whileHover={{ y: -4 }}
+              className="group block rounded-2xl overflow-hidden bg-card border border-border hover:border-brand-sky/30 transition-all duration-300 hover:shadow-lg"
             >
               <div className="relative aspect-video bg-muted overflow-hidden">
                 <img
-                  src={video.thumbnail}
+                  src={`https://img.youtube.com/vi/${video.youtubeId}/maxresdefault.jpg`}
                   alt={video.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 flex items-center justify-center bg-foreground/10 group-hover:bg-foreground/20 transition-colors">
-                  <div className="w-12 h-12 rounded-full bg-primary/90 flex items-center justify-center">
-                    <Play size={18} className="text-primary-foreground ml-0.5" />
-                  </div>
+                  <motion.div
+                    whileHover={{ scale: 1.1 }}
+                    className="w-14 h-14 rounded-full bg-primary/90 backdrop-blur-sm flex items-center justify-center shadow-lg"
+                  >
+                    <Play size={20} className="text-primary-foreground ml-0.5" />
+                  </motion.div>
                 </div>
               </div>
-              <div className="p-5">
-                <h3 className="font-sans font-semibold text-foreground text-sm mb-1">{video.title}</h3>
-                <p className="text-xs text-muted-foreground">{video.description}</p>
+              <div className="p-5 flex items-start justify-between gap-2">
+                <div>
+                  <h3 className="font-sans font-semibold text-foreground text-sm mb-1">{video.title}</h3>
+                  <p className="text-xs text-muted-foreground">{video.description}</p>
+                </div>
+                <ExternalLink size={14} className="text-muted-foreground flex-shrink-0 mt-1 opacity-0 group-hover:opacity-100 transition-opacity" />
               </div>
             </motion.a>
           ))}
