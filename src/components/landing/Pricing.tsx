@@ -85,7 +85,7 @@ const Pricing = () => {
               <div className="mb-1">
                 <span className="text-3xl font-serif">{plan.price}</span>
               </div>
-              <p className={`text-xs mb-1 ${plan.popular ? "text-primary-foreground/70" : "text-muted-foreground"}`}>
+              <p className={`text-xs mb-1 text-muted-foreground`}>
                 {plan.period}
               </p>
               <p className={`text-xs mb-6 font-medium ${plan.popular ? "text-brand-amber" : "text-brand-sky"}`}>
