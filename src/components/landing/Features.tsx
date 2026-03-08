@@ -69,6 +69,13 @@ const keyBenefits = [
   },
 ];
 
+// Zigzag layout: alternating rows of [1 wide, 1 narrow] and [1 narrow, 1 wide]
+const zigzagRows = [
+  { left: 0, right: 1, leftSpan: "md:col-span-7", rightSpan: "md:col-span-5" },
+  { left: 2, right: 3, leftSpan: "md:col-span-5", rightSpan: "md:col-span-7" },
+  { left: 4, right: 5, leftSpan: "md:col-span-7", rightSpan: "md:col-span-5" },
+];
+
 const Features = () => {
   return (
     <section id="features" className="py-24 px-6">
@@ -88,30 +95,55 @@ const Features = () => {
           </p>
         </motion.div>
 
-        {/* Equal card grid - responsive */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-20">
-          {features.map((feature, i) => (
-            <motion.div
-              key={feature.title}
-              initial={{ opacity: 0, y: 20, scale: 0.95 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.08 }}
-              whileHover={{ y: -4, scale: 1.02 }}
-              className={`relative rounded-2xl border border-border/60 bg-gradient-to-br ${feature.gradient} p-6 flex flex-col justify-end overflow-hidden group cursor-default min-h-[160px]`}
-            >
-              <div className="absolute top-4 right-4 w-10 h-10 rounded-xl bg-background/60 backdrop-blur-sm flex items-center justify-center border border-border/40 group-hover:bg-brand-sky/10 transition-colors">
-                <feature.icon size={18} className={feature.iconColor} />
+        {/* Zigzag feature grid */}
+        <div className="space-y-4 mb-20">
+          {zigzagRows.map((row, rowIndex) => {
+            const left = features[row.left];
+            const right = features[row.right];
+            return (
+              <div key={rowIndex} className="grid grid-cols-1 md:grid-cols-12 gap-4">
+                <motion.div
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: rowIndex * 0.1 }}
+                  whileHover={{ y: -4 }}
+                  className={`${row.leftSpan} relative rounded-2xl border border-border/60 bg-gradient-to-br ${left.gradient} p-6 flex flex-col justify-end overflow-hidden group cursor-default min-h-[150px]`}
+                >
+                  <div className="absolute top-4 right-4 w-10 h-10 rounded-xl bg-background/60 backdrop-blur-sm flex items-center justify-center border border-border/40 group-hover:bg-brand-sky/10 transition-colors">
+                    <left.icon size={18} className={left.iconColor} />
+                  </div>
+                  <div className="absolute top-0 right-0 w-24 h-24 bg-brand-sky/5 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <h3 className="font-sans font-semibold text-foreground text-base md:text-lg mb-1 relative z-10">
+                    {left.title}
+                  </h3>
+                  <p className="text-muted-foreground text-xs md:text-sm leading-relaxed relative z-10">
+                    {left.description}
+                  </p>
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: rowIndex * 0.1 + 0.05 }}
+                  whileHover={{ y: -4 }}
+                  className={`${row.rightSpan} relative rounded-2xl border border-border/60 bg-gradient-to-br ${right.gradient} p-6 flex flex-col justify-end overflow-hidden group cursor-default min-h-[150px]`}
+                >
+                  <div className="absolute top-4 right-4 w-10 h-10 rounded-xl bg-background/60 backdrop-blur-sm flex items-center justify-center border border-border/40 group-hover:bg-brand-sky/10 transition-colors">
+                    <right.icon size={18} className={right.iconColor} />
+                  </div>
+                  <div className="absolute top-0 right-0 w-24 h-24 bg-brand-amber/5 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <h3 className="font-sans font-semibold text-foreground text-base md:text-lg mb-1 relative z-10">
+                    {right.title}
+                  </h3>
+                  <p className="text-muted-foreground text-xs md:text-sm leading-relaxed relative z-10">
+                    {right.description}
+                  </p>
+                </motion.div>
               </div>
-              <div className="absolute top-0 right-0 w-24 h-24 bg-brand-sky/5 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity" />
-              <h3 className="font-sans font-semibold text-foreground text-base md:text-lg mb-1 relative z-10">
-                {feature.title}
-              </h3>
-              <p className="text-muted-foreground text-xs md:text-sm leading-relaxed relative z-10">
-                {feature.description}
-              </p>
-            </motion.div>
-          ))}
+            );
+          })}
         </div>
 
         {/* Key Benefits */}
