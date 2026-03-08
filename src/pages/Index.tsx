@@ -2,6 +2,7 @@ import Navbar from "@/components/landing/Navbar";
 import Hero from "@/components/landing/Hero";
 import Comparison from "@/components/landing/Comparison";
 import Features from "@/components/landing/Features";
+import UniqueScores from "@/components/landing/UniqueScores";
 import WhoIsItFor from "@/components/landing/WhoIsItFor";
 import HowItWorks from "@/components/landing/HowItWorks";
 import Stats from "@/components/landing/Stats";
@@ -18,6 +19,7 @@ const Index = () => {
       <Hero />
       <Comparison />
       <Features />
+      <UniqueScores />
       <WhoIsItFor />
       <HowItWorks />
       <Stats />
