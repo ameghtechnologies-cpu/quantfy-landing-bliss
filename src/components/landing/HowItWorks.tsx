@@ -37,7 +37,7 @@ const HowItWorks = () => {
   const step = steps[activeTab];
 
   return (
-    <section className="py-24 px-6 relative overflow-hidden">
+    <section className="py-16 px-6 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-r from-brand-sky/3 via-transparent to-brand-amber/3" />
 
       <div className="max-w-4xl mx-auto relative z-10">

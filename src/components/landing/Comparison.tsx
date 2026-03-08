@@ -22,7 +22,7 @@ const Comparison = () => {
   const [isQuantfy, setIsQuantfy] = useState(false);
 
   return (
-    <section className="py-24 px-6 relative overflow-hidden">
+    <section className="py-16 px-6 relative overflow-hidden">
       <div className="absolute top-0 left-0 w-72 h-72 bg-brand-amber/5 rounded-full blur-3xl -translate-x-1/2" />
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-brand-sky/5 rounded-full blur-3xl translate-x-1/3" />
 

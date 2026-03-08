@@ -43,7 +43,7 @@ const plans = [
 
 const Pricing = () => {
   return (
-    <section id="pricing" className="py-24 px-6 relative overflow-hidden">
+    <section id="pricing" className="py-16 px-6 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-brand-sky/3 to-transparent" />
       <div className="absolute bottom-0 left-1/4 w-80 h-80 bg-brand-amber/5 rounded-full blur-3xl" />
 
