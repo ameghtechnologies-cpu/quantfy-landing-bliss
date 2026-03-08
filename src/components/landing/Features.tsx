@@ -6,42 +6,48 @@ const features = [
     icon: Search,
     title: "Universe Search",
     description: "Browse and search across all listed Indian companies, ETFs & indices in one place.",
-    gradient: "from-brand-sky/20 to-brand-sky/5",
+    className: "col-span-2 row-span-2",
+    gradient: "from-brand-sky/20 to-brand-navy/10",
     iconColor: "text-brand-sky",
   },
   {
     icon: BarChart3,
     title: "DROPify Score",
     description: "A composite score out of 100 combining quality, growth, valuation & shareholding from 50+ data points.",
-    gradient: "from-brand-amber/20 to-brand-amber/5",
+    className: "col-span-1 row-span-1",
+    gradient: "from-brand-amber/15 to-brand-amber/5",
     iconColor: "text-brand-amber",
   },
   {
     icon: TrendingUp,
     title: "MomentoScope",
     description: "Track weekly momentum metrics to spot trend shifts and entry/exit opportunities.",
-    gradient: "from-brand-sky/20 to-brand-sky/5",
+    className: "col-span-1 row-span-1",
+    gradient: "from-brand-sky/15 to-accent/5",
     iconColor: "text-brand-sky",
   },
   {
     icon: Filter,
     title: "Smart Filters",
     description: "Filter by index, sector, industry, PE bands, quality tiers, growth labels and more.",
-    gradient: "from-brand-amber/20 to-brand-amber/5",
+    className: "col-span-1 row-span-1",
+    gradient: "from-brand-navy/15 to-brand-sky/5",
     iconColor: "text-brand-amber",
   },
   {
     icon: PieChart,
     title: "Deep Analysis",
     description: "Profitability, solvency, cash flow, balance sheet, income quality — all in one view.",
-    gradient: "from-brand-sky/20 to-brand-sky/5",
+    className: "col-span-2 row-span-1",
+    gradient: "from-brand-amber/10 to-brand-sky/10",
     iconColor: "text-brand-sky",
   },
   {
     icon: Shield,
     title: "Shareholding Insights",
     description: "Promoter, FII, DII & public holding trends with pledge tracking across quarters.",
-    gradient: "from-brand-amber/20 to-brand-amber/5",
+    className: "col-span-1 row-span-1",
+    gradient: "from-brand-sky/20 to-brand-sky/5",
     iconColor: "text-brand-amber",
   },
 ];
@@ -88,35 +94,36 @@ const Features = () => {
           </p>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
+        {/* Bento grid layout */}
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 auto-rows-[140px] md:auto-rows-[160px] mb-20">
           {features.map((feature, i) => (
             <motion.div
               key={feature.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 20, scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.08 }}
-              whileHover={{ y: -4, transition: { duration: 0.2 } }}
-              className="group relative p-6 rounded-2xl bg-card border border-border hover:border-brand-sky/30 transition-all duration-300 hover:shadow-lg overflow-hidden"
+              whileHover={{ y: -4, scale: 1.02 }}
+              className={`${feature.className} relative rounded-2xl border border-border/60 bg-gradient-to-br ${feature.gradient} p-6 flex flex-col justify-end overflow-hidden group cursor-default`}
             >
-              {/* Gradient background on hover */}
-              <div className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
-
-              <div className="relative z-10">
-                <div className="w-10 h-10 rounded-xl bg-muted flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <feature.icon className={`w-5 h-5 ${feature.iconColor}`} />
-                </div>
-                <h3 className="font-sans font-semibold text-foreground mb-2">{feature.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{feature.description}</p>
+              <div className="absolute top-4 right-4 w-10 h-10 rounded-xl bg-background/60 backdrop-blur-sm flex items-center justify-center border border-border/40 group-hover:bg-brand-sky/10 transition-colors">
+                <feature.icon size={18} className={feature.iconColor} />
               </div>
+              <div className="absolute top-0 right-0 w-24 h-24 bg-brand-sky/5 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity" />
+              <h3 className="font-sans font-semibold text-foreground text-base md:text-lg mb-1 relative z-10">
+                {feature.title}
+              </h3>
+              <p className="text-muted-foreground text-xs md:text-sm leading-relaxed relative z-10">
+                {feature.description}
+              </p>
             </motion.div>
           ))}
         </div>
 
         {/* Key Benefits */}
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="text-center mb-12"
         >
@@ -134,11 +141,15 @@ const Features = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="flex gap-4 p-6 rounded-2xl bg-card border border-border hover:border-brand-amber/30 transition-all duration-300"
+              whileHover={{ y: -3, transition: { duration: 0.2 } }}
+              className="flex gap-4 p-6 rounded-2xl bg-card border border-border hover:border-brand-amber/30 hover:shadow-md transition-all duration-300"
             >
-              <div className="w-10 h-10 rounded-xl bg-brand-amber/10 flex items-center justify-center flex-shrink-0">
+              <motion.div
+                whileHover={{ scale: 1.1, rotate: 5 }}
+                className="w-10 h-10 rounded-xl bg-brand-amber/10 flex items-center justify-center flex-shrink-0"
+              >
                 <benefit.icon className="w-5 h-5 text-brand-amber" />
-              </div>
+              </motion.div>
               <div>
                 <h3 className="font-sans font-semibold text-foreground mb-1">{benefit.title}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">{benefit.description}</p>
