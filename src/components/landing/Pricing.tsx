@@ -19,7 +19,6 @@ const plans = [
     price: "₹5,500",
     period: "for 6 months",
     perMonth: "₹917/mo",
-    popular: true,
     features: [
       "Everything in 3-month plan",
       "Deep stock analysis",
@@ -32,6 +31,7 @@ const plans = [
     price: "₹10,000",
     period: "for 1 year",
     perMonth: "₹833/mo",
+    popular: true,
     features: [
       "Everything in 6-month plan",
       "Portfolio & Watchlist tools",
@@ -69,7 +69,7 @@ const Pricing = () => {
               whileHover={{ y: -6 }}
               className={`relative p-6 rounded-2xl border transition-all duration-300 hover:shadow-xl ${
                 plan.popular
-                  ? "bg-primary text-primary-foreground border-primary shadow-lg shadow-primary/20 scale-[1.02]"
+                  ? "bg-card border-brand-sky/40 shadow-lg shadow-brand-sky/10 scale-[1.02] ring-1 ring-brand-sky/20"
                   : "bg-card border-border hover:border-brand-sky/30"
               }`}
             >
@@ -85,7 +85,7 @@ const Pricing = () => {
               <div className="mb-1">
                 <span className="text-3xl font-serif">{plan.price}</span>
               </div>
-              <p className={`text-xs mb-1 ${plan.popular ? "text-primary-foreground/70" : "text-muted-foreground"}`}>
+              <p className={`text-xs mb-1 text-muted-foreground`}>
                 {plan.period}
               </p>
               <p className={`text-xs mb-6 font-medium ${plan.popular ? "text-brand-amber" : "text-brand-sky"}`}>
@@ -96,7 +96,7 @@ const Pricing = () => {
                 {plan.features.map((f) => (
                   <li key={f} className="flex items-start gap-2 text-sm">
                     <Check size={14} className={`mt-0.5 flex-shrink-0 ${plan.popular ? "text-brand-amber" : "text-brand-sky"}`} />
-                    <span className={plan.popular ? "text-primary-foreground/90" : "text-muted-foreground"}>
+                    <span className="text-muted-foreground">
                       {f}
                     </span>
                   </li>
@@ -108,7 +108,7 @@ const Pricing = () => {
                 whileTap={{ scale: 0.98 }}
                 className={`w-full py-3 rounded-full text-sm font-medium transition-all duration-300 ${
                   plan.popular
-                    ? "bg-primary-foreground text-primary hover:shadow-md"
+                    ? "bg-brand-sky text-foreground hover:shadow-md hover:shadow-brand-sky/20"
                     : "bg-primary text-primary-foreground hover:shadow-md hover:shadow-primary/20"
                 }`}
               >
