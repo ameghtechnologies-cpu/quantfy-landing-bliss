@@ -16,17 +16,18 @@ const WhoIsItFor = () => {
           </h2>
         </motion.div>
 
-        {/* Non-overlapping bento grid */}
-        <div className="grid grid-cols-12 gap-3" style={{ gridTemplateRows: "180px 180px" }}>
+        {/* Interlocking L-shaped grid */}
+        <div className="grid grid-cols-12 gap-4" style={{ gridTemplateRows: "160px 160px 160px" }}>
 
-          {/* Card 1: Retail Investors — top-left */}
+          {/* L-shape 1: Retail Investors (tall left) + Swing Traders (short top-right) */}
+          {/* Retail Investors — col 1-5, row 1-2 */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0 }}
             whileHover={{ y: -4, transition: { duration: 0.2 } }}
-            className="col-span-4 row-span-2 rounded-2xl p-5 flex flex-col justify-end overflow-hidden relative"
+            className="col-start-1 col-end-6 row-start-1 row-end-3 rounded-2xl p-5 flex flex-col justify-end overflow-hidden relative"
             style={{
               background: "linear-gradient(135deg, hsl(var(--brand-sky) / 0.25), hsl(var(--brand-navy) / 0.15))",
               border: "1px solid hsl(var(--border) / 0.3)",
@@ -39,14 +40,14 @@ const WhoIsItFor = () => {
             <p className="text-sm text-muted-foreground leading-relaxed">Make confident stock picks backed by data, not noise.</p>
           </motion.div>
 
-          {/* Card 2: Swing Traders — top-right */}
+          {/* Swing Traders — col 6-12, row 1 */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.08 }}
             whileHover={{ y: -4, transition: { duration: 0.2 } }}
-            className="col-span-8 rounded-2xl p-5 flex flex-col justify-end overflow-hidden"
+            className="col-start-6 col-end-13 row-start-1 row-end-2 rounded-2xl p-5 flex flex-col justify-end overflow-hidden relative"
             style={{
               background: "linear-gradient(180deg, hsl(var(--brand-navy) / 0.18), hsl(var(--brand-sky) / 0.15))",
               border: "1px solid hsl(var(--border) / 0.3)",
@@ -59,14 +60,15 @@ const WhoIsItFor = () => {
             <p className="text-sm text-muted-foreground leading-relaxed">Spot momentum shifts early with MomentoScope.</p>
           </motion.div>
 
-          {/* Card 3: Financial Advisors — bottom-left */}
+          {/* L-shape 2: Financial Advisors (short bottom-left) + Students (tall right) */}
+          {/* Financial Advisors — col 6-12, row 2 (but shifted to interlock) */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.16 }}
             whileHover={{ y: -4, transition: { duration: 0.2 } }}
-            className="col-span-8 rounded-2xl p-5 flex flex-col justify-end overflow-hidden"
+            className="col-start-1 col-end-8 row-start-3 row-end-4 rounded-2xl p-5 flex flex-col justify-end overflow-hidden relative"
             style={{
               background: "linear-gradient(135deg, hsl(var(--brand-amber) / 0.18), hsl(var(--brand-sky) / 0.1))",
               border: "1px solid hsl(var(--border) / 0.3)",
@@ -79,27 +81,27 @@ const WhoIsItFor = () => {
             <p className="text-sm text-muted-foreground leading-relaxed">Screen and shortlist stocks faster for your clients.</p>
           </motion.div>
 
-          {/* Card 4: Students & Learners — bottom-right */}
+          {/* Students & Learners — col 8-12, row 2-3 */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.24 }}
             whileHover={{ y: -4, transition: { duration: 0.2 } }}
-            className="col-span-5 rounded-2xl p-5 flex flex-col justify-end overflow-hidden"
+            className="col-start-8 col-end-13 row-start-2 row-end-4 rounded-2xl p-5 flex flex-col justify-end overflow-hidden relative"
             style={{
               background: "linear-gradient(135deg, hsl(var(--brand-amber) / 0.22), hsl(var(--brand-sky) / 0.12))",
               border: "1px solid hsl(var(--border) / 0.3)",
             }}
           >
-            <div className="flex gap-1 mb-3">
-              <div className="w-8 h-8 rounded-lg bg-background/20 backdrop-blur-sm flex items-center justify-center">
-                <BookOpen className="w-4 h-4 text-brand-sky" />
-              </div>
+            <div className="absolute top-4 right-4 w-10 h-10 rounded-full bg-background/20 backdrop-blur-sm flex items-center justify-center border border-border/20">
+              <BookOpen className="w-4 h-4 text-brand-sky" />
             </div>
             <h3 className="font-sans font-bold text-foreground text-lg mb-1">Students & Learners</h3>
             <p className="text-sm text-muted-foreground leading-relaxed">Understand fundamentals through intuitive scores and visuals.</p>
           </motion.div>
+
+          {/* Center gap cell (row 2, col 6-7) is intentionally empty for spacing */}
 
         </div>
       </div>
