@@ -96,7 +96,7 @@ const Pricing = () => {
                 {plan.features.map((f) => (
                   <li key={f} className="flex items-start gap-2 text-sm">
                     <Check size={14} className={`mt-0.5 flex-shrink-0 ${plan.popular ? "text-brand-amber" : "text-brand-sky"}`} />
-                    <span className={plan.popular ? "text-primary-foreground/90" : "text-muted-foreground"}>
+                    <span className="text-muted-foreground">
                       {f}
                     </span>
                   </li>
