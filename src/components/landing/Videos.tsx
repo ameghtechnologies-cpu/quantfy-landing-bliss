@@ -21,7 +21,7 @@ const videos = [
 
 const Videos = () => {
   return (
-    <section id="videos" className="py-24 px-6 relative overflow-hidden">
+    <section id="videos" className="py-16 px-6 relative overflow-hidden">
       <div className="absolute top-1/2 left-0 w-80 h-80 bg-brand-sky/5 rounded-full blur-3xl -translate-y-1/2 -translate-x-1/2" />
       <div className="absolute top-1/4 right-0 w-64 h-64 bg-brand-amber/5 rounded-full blur-3xl translate-x-1/3" />
 
