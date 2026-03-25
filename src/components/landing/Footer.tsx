@@ -14,7 +14,7 @@ const Footer = () => {
           className="flex flex-col md:flex-row items-center justify-between gap-8 mb-12"
         >
           <div className="flex flex-col items-center md:items-start gap-3">
-            <img src={logo} alt="Quantfy" className="h-8" />
+            <img src={logo} alt="QuanTfy" className="h-8" />
             <p className="text-sm text-muted-foreground max-w-xs text-center md:text-left">
               Stock analysis at ease. Quantified scores for smarter investing decisions.
             </p>

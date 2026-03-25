@@ -34,7 +34,7 @@ const Comparison = () => {
           className="text-center mb-12"
         >
           <h2 className="text-3xl md:text-4xl font-serif text-foreground mb-4">
-            What makes Quantfy different?
+            What makes QuanTfy different?
           </h2>
           <p className="text-muted-foreground max-w-lg mx-auto">
             Stop drowning in data. Start making confident decisions.
@@ -67,7 +67,7 @@ const Comparison = () => {
                 isQuantfy ? "text-brand-sky" : "text-muted-foreground"
               }`}
             >
-              The Quantfy Way
+              The QuanTfy Way
             </button>
           </div>
         </div>

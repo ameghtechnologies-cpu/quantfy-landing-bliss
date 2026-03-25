@@ -1,30 +1,29 @@
 import { motion } from "framer-motion";
 import { Check, Star } from "lucide-react";
 
+const features = [
+  "Full Universe access (1400+ stocks)",
+  "QGVise Score & sub-scores",
+  "MomentoScope charts",
+  "Smart filters & sorting",
+  "Deep stock analysis",
+  "Shareholding trends",
+  "Portfolio & Watchlist tools",
+  "Historical data access",
+];
+
 const plans = [
   {
     name: "3 Months",
     price: "₹3,000",
     period: "for 3 months",
     perMonth: "₹1,000/mo",
-    features: [
-      "Full Universe access",
-      "DROPify Score & sub-scores",
-      "MomentoScope charts",
-      "Smart filters & sorting",
-    ],
   },
   {
     name: "6 Months",
     price: "₹5,500",
     period: "for 6 months",
     perMonth: "₹917/mo",
-    features: [
-      "Everything in 3-month plan",
-      "Deep stock analysis",
-      "Shareholding trends",
-      "Priority support",
-    ],
   },
   {
     name: "1 Year",
@@ -32,12 +31,7 @@ const plans = [
     period: "for 1 year",
     perMonth: "₹833/mo",
     popular: true,
-    features: [
-      "Everything in 6-month plan",
-      "Portfolio & Watchlist tools",
-      "Historical data access",
-      "Best value — save 17%",
-    ],
+    savings: "Save 17%",
   },
 ];
 
@@ -58,9 +52,30 @@ const Pricing = () => {
           <h2 className="text-3xl md:text-4xl font-serif text-foreground mb-4">
             Simple, transparent pricing
           </h2>
-          <p className="text-muted-foreground">No hidden fees. Cancel anytime.</p>
+          <p className="text-muted-foreground">All plans include every feature. Pick the duration that suits you.</p>
         </motion.div>
 
+        {/* Features list */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="max-w-2xl mx-auto mb-12"
+        >
+          <div className="p-6 rounded-2xl bg-card border border-border">
+            <h3 className="font-sans font-semibold text-foreground text-center mb-5">Everything included in every plan</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {features.map((f) => (
+                <div key={f} className="flex items-start gap-2 text-sm">
+                  <Check size={14} className="mt-0.5 flex-shrink-0 text-brand-sky" />
+                  <span className="text-muted-foreground">{f}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Plan cards */}
         <div className="grid sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
           {plans.map((plan, i) => (
             <motion.div
@@ -81,7 +96,7 @@ const Pricing = () => {
                   <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-sky via-brand-amber to-brand-sky" />
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-10">
                     <span className="inline-flex items-center gap-1 text-[10px] uppercase tracking-widest font-semibold bg-brand-amber text-foreground px-4 py-1.5 rounded-full shadow-md">
-                      <Star size={10} /> Most Popular
+                      <Star size={10} /> Best Value
                     </span>
                   </div>
                 </>
@@ -92,18 +107,12 @@ const Pricing = () => {
                 <span className="text-3xl font-serif">{plan.price}</span>
               </div>
               <p className="text-xs mb-1 text-muted-foreground">{plan.period}</p>
-              <p className={`text-xs mb-6 font-medium ${plan.popular ? "text-brand-amber" : "text-brand-sky"}`}>
+              <p className={`text-xs mb-4 font-medium ${plan.popular ? "text-brand-amber" : "text-brand-sky"}`}>
                 {plan.perMonth}
               </p>
-
-              <ul className="space-y-3 mb-8">
-                {plan.features.map((f) => (
-                  <li key={f} className="flex items-start gap-2 text-sm">
-                    <Check size={14} className={`mt-0.5 flex-shrink-0 ${plan.popular ? "text-brand-amber" : "text-brand-sky"}`} />
-                    <span className="text-muted-foreground">{f}</span>
-                  </li>
-                ))}
-              </ul>
+              {plan.savings && (
+                <p className="text-xs font-semibold text-brand-amber mb-4">{plan.savings}</p>
+              )}
 
               <motion.button
                 whileHover={{ scale: 1.02 }}

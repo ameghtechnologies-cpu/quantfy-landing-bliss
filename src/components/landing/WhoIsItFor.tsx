@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Bell, BookOpen, TrendingUp, Briefcase } from "lucide-react";
+import icon from "@/assets/quantfy-icon.png";
 
 const WhoIsItFor = () => {
   return (
@@ -19,7 +20,6 @@ const WhoIsItFor = () => {
         {/* Interlocking L-shaped grid */}
         <div className="grid grid-cols-12 gap-4" style={{ gridTemplateRows: "160px 160px 160px" }}>
 
-          {/* L-shape 1: Retail Investors (tall left) + Swing Traders (short top-right) */}
           {/* Retail Investors — col 1-5, row 1-2 */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -60,8 +60,7 @@ const WhoIsItFor = () => {
             <p className="text-sm text-muted-foreground leading-relaxed">Spot momentum shifts early with MomentoScope.</p>
           </motion.div>
 
-          {/* L-shape 2: Financial Advisors (short bottom-left) + Students (tall right) */}
-          {/* Financial Advisors — col 6-12, row 2 (but shifted to interlock) */}
+          {/* Financial Advisors — col 1-7, row 3 */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -101,7 +100,7 @@ const WhoIsItFor = () => {
             <p className="text-sm text-muted-foreground leading-relaxed">Understand fundamentals through intuitive scores and visuals.</p>
           </motion.div>
 
-          {/* Center image in the interlocking gap */}
+          {/* Center Q logo in the interlocking gap */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -114,9 +113,9 @@ const WhoIsItFor = () => {
             }}
           >
             <img
-              src="/placeholder.svg"
-              alt="Quantfy platform preview"
-              className="w-full h-full object-cover"
+              src={icon}
+              alt="QuanTfy"
+              className="w-16 h-16 object-contain"
             />
           </motion.div>
 

@@ -5,8 +5,8 @@ import { Award, Activity, TrendingUp, Trophy, ChevronLeft, ChevronRight } from "
 const scores = [
   {
     icon: Award,
-    title: "DROPify Score",
-    subtitle: "Quality at a Glance",
+    title: "QGVise Score",
+    subtitle: "Fundamentals at a Glance",
     description:
       "A composite score out of 100 combining quality, growth, valuation & shareholding from 50+ data points. Instantly understand if a stock deserves your attention.",
     gradient: "from-brand-amber/20 via-brand-amber/5 to-transparent",
@@ -16,9 +16,9 @@ const scores = [
   {
     icon: Activity,
     title: "MomentoScope",
-    subtitle: "Momentum Intelligence",
+    subtitle: "Momentum Demystified",
     description:
-      "Track weekly momentum metrics to spot trend shifts and entry/exit opportunities. Combines price action, volume, and relative strength into a clear weekly signal.",
+      "Track weekly momentum metrics to spot trend shifts and entry/exit opportunities. Combines price action and leaderboard score to get a clear weekly signal.",
     gradient: "from-brand-sky/20 via-brand-sky/5 to-transparent",
     iconColor: "text-brand-sky",
     bgAccent: "bg-brand-sky/8",
@@ -26,9 +26,9 @@ const scores = [
   {
     icon: TrendingUp,
     title: "Price Action Score",
-    subtitle: "Technical Strength",
+    subtitle: "Price Volume Strength",
     description:
-      "Measures a stock's technical health using moving averages, breakout patterns, and trend consistency. A quick gauge of whether price momentum supports fundamentals.",
+      "Measure a stock's price volume action to quickly gauge that in correlation with Momentum.",
     gradient: "from-brand-amber/20 via-brand-navy/5 to-transparent",
     iconColor: "text-brand-amber",
     bgAccent: "bg-brand-amber/8",
@@ -36,9 +36,9 @@ const scores = [
   {
     icon: Trophy,
     title: "Leaderboard Score",
-    subtitle: "Relative Ranking",
+    subtitle: "Market Leadership",
     description:
-      "Ranks every stock against its peers combining all scores into a single leaderboard position. See where a company stands in its sector and across the entire market.",
+      "Easily identify Market, Sector and Industry leaders.",
     gradient: "from-brand-sky/20 via-brand-navy/5 to-transparent",
     iconColor: "text-brand-sky",
     bgAccent: "bg-brand-sky/8",

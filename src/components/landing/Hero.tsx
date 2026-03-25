@@ -15,9 +15,10 @@ const itemVariants = {
 };
 
 const checkpoints = [
-  "Simple scores, not complicated spreadsheets",
-  "Weekly momentum & quarterly fundamental updates",
-  "Works on any device, no installation needed",
+  "Fundamentals Simplified",
+  "Momentum Demystified",
+  "Leaders Identified",
+  "Price Action Clarified",
 ];
 
 const Hero = () => {
@@ -52,7 +53,7 @@ const Hero = () => {
         <motion.div variants={itemVariants} className="mb-8">
           <motion.img
             src={icon}
-            alt="Quantfy"
+            alt="QuanTfy"
             className="w-20 h-20"
             animate={{ rotate: [0, 5, -5, 0] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
@@ -65,7 +66,7 @@ const Hero = () => {
           className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-sky/10 border border-brand-sky/20 mb-8"
         >
           <span className="w-1.5 h-1.5 rounded-full bg-brand-sky animate-pulse" />
-          <span className="text-xs font-medium text-brand-sky">Your Technofunda Companion</span>
+          <span className="text-xs font-medium text-brand-sky">Your Technofunda Edge</span>
         </motion.div>
 
         {/* Title with gradient */}
@@ -172,7 +173,7 @@ const Hero = () => {
                     </div>
                   </div>
                   <div className="text-right">
-                    <span className="text-xs text-muted-foreground">DROPify Score</span>
+                    <span className="text-xs text-muted-foreground">QGVise Score</span>
                     <p className="font-semibold text-foreground">{stock.score}/100</p>
                   </div>
                 </motion.div>

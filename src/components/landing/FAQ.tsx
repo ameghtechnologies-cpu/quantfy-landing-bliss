@@ -8,32 +8,28 @@ import {
 
 const faqs = [
   {
-    q: "Is Quantfy an app I need to install?",
+    q: "Is QuanTfy an app I need to install?",
     a: "No. It is a web app that runs smoothly on any device using your browser. It can be saved as a web app (shortcut) on your device screen with just a click.",
   },
   {
-    q: "Does Quantfy give buy/sell tips?",
-    a: "No. Quantfy provides quantified scores and analysis to guide YOUR decisions, not recommendations. It helps you understand the fundamentals and momentum of stocks so you can make informed choices.",
+    q: "Does QuanTfy give buy/sell tips?",
+    a: "No. QuanTfy provides quantified scores and analysis to guide YOUR decisions, not recommendations. It helps you understand the fundamentals and momentum of stocks so you can make informed choices.",
   },
   {
     q: "How often is data updated?",
-    a: "DROPify scores update quarterly with results. MomentoScope updates every week, giving you fresh momentum insights consistently.",
+    a: "QGVise scores update quarterly with results. MomentoScope updates every week, giving you fresh momentum insights consistently.",
   },
   {
     q: "Will beginners understand it?",
-    a: "Absolutely. Quantfy is designed to be clear and simple while offering professional-grade structure. Whether you're just starting or experienced, it meets you where you are.",
+    a: "Absolutely. QuanTfy is designed to be clear and simple while offering professional-grade structure. Whether you're just starting or experienced, it meets you where you are.",
   },
   {
-    q: "What does the DROPify Score measure?",
-    a: "DROPify transforms over 50 data points spanning balance sheet, income, cash flow & holding statements into a precise numerical score out of 100. It covers Quality, Growth, Valuation, and Shareholding dimensions.",
+    q: "What does the QGVise Score measure?",
+    a: "QGVise transforms over 50 data points spanning balance sheet, income, cash flow & holding statements into a precise numerical score out of 100. It covers Quality, Growth, Valuation, and Shareholding dimensions.",
   },
   {
     q: "What is MomentoScope?",
     a: "MomentoScope simplifies complex technical data by transforming various momentum parameters into a single, actionable MomentoScore. It's updated weekly to help you spot trend shifts.",
-  },
-  {
-    q: "Can I cancel anytime?",
-    a: "Yes. There are no hidden fees or lock-in contracts. You can cancel your subscription at any time.",
   },
 ];
 
@@ -55,7 +51,7 @@ const FAQ = () => {
             Frequently asked questions
           </h2>
           <p className="text-muted-foreground">
-            Everything you need to know about Quantfy.
+            Everything you need to know about QuanTfy.
           </p>
         </motion.div>
 

@@ -5,14 +5,14 @@ const steps = [
   {
     num: "01",
     title: "Screen Smartly",
-    description: "Filter 1000+ companies by Quality, Growth, Valuation, or Momentum scores to find opportunities matching your criteria.",
-    detail: "Use powerful filters to narrow down from thousands of stocks to a focused shortlist. Set thresholds on DROPify scores, market cap, sector, and more to match your investing style.",
+    description: "Filter 1400+ companies by Quality, Growth, Valuation, or Momentum scores to find opportunities matching your criteria.",
+    detail: "Use powerful filters to narrow down from stock universe to a focused shortlist.",
     accent: "brand-sky",
   },
   {
     num: "02",
     title: "Understand Instantly",
-    description: "Open any company to see clear DROPify scores and weekly MomentoScope trends at a glance.",
+    description: "Open any company to see clear QGVise scores and weekly MomentoScope trends at a glance.",
     detail: "Each company page shows a clean dashboard with all four proprietary scores, key financial metrics, and trend indicators — no information overload, just what matters.",
     accent: "brand-amber",
   },
@@ -20,7 +20,7 @@ const steps = [
     num: "03",
     title: "Explore Deeply",
     description: "Use structured tabs for detailed fundamentals and momentum analysis when you need more context.",
-    detail: "Dive into quarterly results, balance sheet trends, shareholding patterns, and technical charts. Every data point is organized in clear tabs so you find what you need fast.",
+    detail: "Dive into quarterly results, shareholding patterns, and MomentoScope charts. Every data point is organized in clear tabs so you find what you need fast.",
     accent: "brand-sky",
   },
   {
