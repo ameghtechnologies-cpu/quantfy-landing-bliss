@@ -5,7 +5,7 @@ const testimonials = [
   {
     name: "Rajesh K.",
     role: "Retail Investor, Mumbai",
-    text: "Quantfy's DROPify score saves me hours of research. I can quickly shortlist quality stocks without drowning in spreadsheets.",
+    text: "QuanTfy's QGVise score saves me hours of research. I can quickly shortlist quality stocks without drowning in spreadsheets.",
     highlight: "saves me hours",
     accent: "from-brand-sky to-brand-sky/60",
   },
@@ -17,9 +17,9 @@ const testimonials = [
     accent: "from-brand-amber to-brand-amber/60",
   },
   {
-    name: "Amit D.",
-    role: "Financial Advisor, Delhi",
-    text: "The filtering and scoring system is incredibly well thought out. My clients love the clear, quantified approach to stock analysis.",
+    name: "Dr. Suresh M.",
+    role: "Long-term Investor, Pune",
+    text: "The scoring system is incredibly well thought out. It gives me a clear, quantified approach to stock analysis that I can trust.",
     highlight: "incredibly well thought out",
     accent: "from-brand-sky to-brand-amber",
   },

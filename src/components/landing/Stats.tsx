@@ -4,8 +4,8 @@ import { useEffect, useRef, useState } from "react";
 const stats = [
   { value: 1400, suffix: "+", label: "Stocks Covered", sublabel: "Comprehensive coverage across sectors", accent: "text-brand-sky" },
   { value: 52, suffix: "", label: "Weekly Updates", sublabel: "MomentoScope refreshed every week", accent: "text-brand-amber" },
-  { value: 4, suffix: "", label: "Quarterly Updates", sublabel: "DROPify scores updated each quarter", accent: "text-brand-sky" },
-  { value: 50, suffix: "+", label: "Data Points", sublabel: "Per stock in DROPify analysis", accent: "text-brand-amber" },
+  { value: 4, suffix: "", label: "Quarterly Updates", sublabel: "QGVise scores updated each quarter", accent: "text-brand-sky" },
+  { value: 50, suffix: "+", label: "Data Points", sublabel: "Per stock in QGVise analysis", accent: "text-brand-amber" },
 ];
 
 function AnimatedCounter({ value, suffix }: { value: number; suffix: string }) {

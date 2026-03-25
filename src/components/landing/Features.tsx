@@ -5,28 +5,28 @@ const features = [
   {
     icon: Search,
     title: "Universe Search",
-    description: "Browse and search across all listed Indian companies, ETFs & indices in one place.",
+    description: "Browse and search across > 1400 Indian companies, ETFs & indices in one place.",
     gradient: "from-brand-sky/20 to-brand-navy/10",
     iconColor: "text-brand-sky",
   },
   {
     icon: ArrowUpDown,
     title: "Sort Options",
-    description: "Sort companies by DROPify score, market cap, PE ratio, returns and more to find the best picks fast.",
+    description: "Sort companies by QGVise score, Market Cap, PE, Momentum and more to find the best picks fast.",
     gradient: "from-brand-amber/15 to-brand-amber/5",
     iconColor: "text-brand-amber",
   },
   {
     icon: GitCompareArrows,
     title: "Transition Filter",
-    description: "Track quarterly rating changes — find stocks upgrading or downgrading in quality and momentum.",
+    description: "Track changes in fundamentals & momentum in just one click.",
     gradient: "from-brand-sky/15 to-accent/5",
     iconColor: "text-brand-sky",
   },
   {
     icon: Filter,
     title: "Smart Filters",
-    description: "Filter by index, sector, industry, PE bands, quality tiers, growth labels and more.",
+    description: "Filter by index, sector, industry, quality, growth, valuations and more.",
     gradient: "from-brand-navy/15 to-brand-sky/5",
     iconColor: "text-brand-amber",
   },
@@ -55,7 +55,7 @@ const keyBenefits = [
   {
     icon: Zap,
     title: "Saves Massive Time",
-    description: "Understand a company's fundamentals and momentum profile in minutes, not hours.",
+    description: "Understand a company's fundamentals, momentum & price action profile in minutes, not hours.",
   },
   {
     icon: BarChart3,
@@ -65,7 +65,7 @@ const keyBenefits = [
   {
     icon: Search,
     title: "For Everyone",
-    description: "Whether you're just starting or you're experienced, Quantfy meets you where you are with a warm, guided experience.",
+    description: "Whether you're just starting or you're experienced, QuanTfy meets you where you are with a warm, guided experience.",
   },
 ];
 
