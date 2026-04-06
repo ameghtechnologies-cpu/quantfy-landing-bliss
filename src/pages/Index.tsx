@@ -23,6 +23,7 @@ const Index = () => {
       <UniqueScores />
       <WhoIsItFor />
       <HowItWorks />
+      <WhyQuantfy />
       <Stats />
       <Videos />
       <Testimonials />
