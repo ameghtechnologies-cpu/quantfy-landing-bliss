@@ -5,6 +5,7 @@ import Features from "@/components/landing/Features";
 import UniqueScores from "@/components/landing/UniqueScores";
 import WhoIsItFor from "@/components/landing/WhoIsItFor";
 import HowItWorks from "@/components/landing/HowItWorks";
+import WhyQuantfy from "@/components/landing/WhyQuantfy";
 import Stats from "@/components/landing/Stats";
 import Videos from "@/components/landing/Videos";
 import Testimonials from "@/components/landing/Testimonials";
@@ -22,6 +23,7 @@ const Index = () => {
       <UniqueScores />
       <WhoIsItFor />
       <HowItWorks />
+      <WhyQuantfy />
       <Stats />
       <Videos />
       <Testimonials />
