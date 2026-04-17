@@ -3,24 +3,21 @@ import { Quote } from "lucide-react";
 
 const testimonials = [
   {
-    name: "Rajesh K.",
-    role: "Retail Investor, Mumbai",
+    name: "Dr. Jiagr Parekh",
+    role: "Rajkot",
     text: "QuanTfy's QGVise score saves me hours of research. I can quickly shortlist quality stocks without drowning in spreadsheets.",
-    highlight: "saves me hours",
     accent: "from-brand-sky to-brand-sky/60",
   },
   {
-    name: "Priya S.",
-    role: "Swing Trader, Bangalore",
+    name: "Kapesh Shah",
+    role: "Ahmedabad",
     text: "MomentoScope is a game-changer. I finally have a reliable momentum indicator that's designed for Indian markets.",
-    highlight: "game-changer",
     accent: "from-brand-amber to-brand-amber/60",
   },
   {
-    name: "Dr. Suresh M.",
-    role: "Long-term Investor, Pune",
+    name: "Suresh Agarwal",
+    role: "Lucknow",
     text: "The scoring system is incredibly well thought out. It gives me a clear, quantified approach to stock analysis that I can trust.",
-    highlight: "incredibly well thought out",
     accent: "from-brand-sky to-brand-amber",
   },
 ];

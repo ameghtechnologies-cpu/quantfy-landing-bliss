@@ -14,7 +14,7 @@ const newWay = [
   "Clean, actionable scores in one place",
   "Simple frameworks you can trust",
   "Research time cut by 5x",
-  "Easy comparison across 1400+ stocks",
+  "Easy comparison across 1500+ stocks",
   "Clarity and confidence in every decision",
 ];
 

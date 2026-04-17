@@ -1,16 +1,5 @@
 import { motion } from "framer-motion";
-import { Check, Star } from "lucide-react";
-
-const features = [
-  "Full Universe access (1400+ stocks)",
-  "QGVise Score & sub-scores",
-  "MomentoScope charts",
-  "Smart filters & sorting",
-  "Deep stock analysis",
-  "Shareholding trends",
-  "Portfolio & Watchlist tools",
-  "Historical data access",
-];
+import { Star } from "lucide-react";
 
 const plans = [
   {
@@ -53,26 +42,6 @@ const Pricing = () => {
             Simple, transparent pricing
           </h2>
           <p className="text-muted-foreground">All plans include every feature. Pick the duration that suits you.</p>
-        </motion.div>
-
-        {/* Features list */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="max-w-2xl mx-auto mb-12"
-        >
-          <div className="p-6 rounded-2xl bg-card border border-border">
-            <h3 className="font-sans font-semibold text-foreground text-center mb-5">Everything included in every plan</h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              {features.map((f) => (
-                <div key={f} className="flex items-start gap-2 text-sm">
-                  <Check size={14} className="mt-0.5 flex-shrink-0 text-brand-sky" />
-                  <span className="text-muted-foreground">{f}</span>
-                </div>
-              ))}
-            </div>
-          </div>
         </motion.div>
 
         {/* Plan cards */}

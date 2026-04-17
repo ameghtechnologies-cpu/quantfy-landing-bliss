@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Award, Activity, TrendingUp, Trophy, ChevronLeft, ChevronRight } from "lucide-react";
+import { Award, Activity, TrendingUp, Trophy, ChevronLeft, ChevronRight, ExternalLink } from "lucide-react";
 
 const scores = [
   {
@@ -12,6 +12,7 @@ const scores = [
     gradient: "from-brand-amber/20 via-brand-amber/5 to-transparent",
     iconColor: "text-brand-amber",
     bgAccent: "bg-brand-amber/8",
+    link: "https://qgvise.lovable.app",
   },
   {
     icon: Activity,
@@ -22,6 +23,7 @@ const scores = [
     gradient: "from-brand-sky/20 via-brand-sky/5 to-transparent",
     iconColor: "text-brand-sky",
     bgAccent: "bg-brand-sky/8",
+    link: "https://momentoscope.lovable.app",
   },
   {
     icon: TrendingUp,
@@ -32,6 +34,7 @@ const scores = [
     gradient: "from-brand-amber/20 via-brand-navy/5 to-transparent",
     iconColor: "text-brand-amber",
     bgAccent: "bg-brand-amber/8",
+    link: null,
   },
   {
     icon: Trophy,
@@ -42,6 +45,7 @@ const scores = [
     gradient: "from-brand-sky/20 via-brand-navy/5 to-transparent",
     iconColor: "text-brand-sky",
     bgAccent: "bg-brand-sky/8",
+    link: null,
   },
 ];
 
@@ -105,7 +109,7 @@ const UniqueScores = () => {
           </button>
 
           {/* Content */}
-          <div className="relative z-10 min-h-[420px] md:min-h-[380px] flex items-center">
+          <div className="relative z-10 min-h-[320px] md:min-h-[300px] flex items-center">
             <AnimatePresence mode="wait" custom={direction}>
               <motion.div
                 key={active}
@@ -117,31 +121,32 @@ const UniqueScores = () => {
                 transition={{ duration: 0.35, ease: "easeInOut" }}
                 className="w-full px-10 md:px-20 py-12 md:py-16"
               >
-                <div className="flex flex-col md:flex-row gap-8 items-center">
-                  {/* Text side */}
-                  <div className="flex-1 text-center md:text-left">
-                    <div className="flex items-center gap-3 mb-4 justify-center md:justify-start">
-                      <div className={`w-14 h-14 rounded-xl ${score.bgAccent} flex items-center justify-center`}>
-                        <score.icon className={`w-7 h-7 ${score.iconColor}`} />
-                      </div>
-                      <div>
-                        <h3 className="font-sans font-bold text-foreground text-xl">{score.title}</h3>
-                        <span className="text-xs font-medium text-muted-foreground uppercase tracking-wide">
-                          {score.subtitle}
-                        </span>
-                      </div>
+                <div className="flex flex-col items-center text-center max-w-2xl mx-auto">
+                  <div className="flex items-center gap-3 mb-5">
+                    <div className={`w-14 h-14 rounded-xl ${score.bgAccent} flex items-center justify-center`}>
+                      <score.icon className={`w-7 h-7 ${score.iconColor}`} />
                     </div>
-                    <p className="text-muted-foreground leading-relaxed max-w-md">
-                      {score.description}
-                    </p>
-                  </div>
-
-                  {/* Screenshot placeholder */}
-                  <div className="flex-1 max-w-sm w-full">
-                    <div className="rounded-xl bg-muted/50 border border-border/50 aspect-[4/3] flex items-center justify-center">
-                      <span className="text-xs text-muted-foreground/60">Screenshot coming soon</span>
+                    <div className="text-left">
+                      <h3 className="font-sans font-bold text-foreground text-xl">{score.title}</h3>
+                      <span className="text-xs font-medium text-muted-foreground uppercase tracking-wide">
+                        {score.subtitle}
+                      </span>
                     </div>
                   </div>
+                  <p className="text-muted-foreground leading-relaxed mb-6">
+                    {score.description}
+                  </p>
+                  {score.link && (
+                    <a
+                      href={score.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-sm font-medium text-brand-sky hover:text-brand-amber transition-colors"
+                    >
+                      Explore {score.title}
+                      <ExternalLink className="w-4 h-4" />
+                    </a>
+                  )}
                 </div>
               </motion.div>
             </AnimatePresence>

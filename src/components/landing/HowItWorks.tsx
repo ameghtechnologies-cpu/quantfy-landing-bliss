@@ -5,7 +5,7 @@ const steps = [
   {
     num: "01",
     title: "Screen Smartly",
-    description: "Filter 1400+ companies by Quality, Growth, Valuation, or Momentum scores to find opportunities matching your criteria.",
+    description: "Filter 1500+ companies by Quality, Growth, Valuation, or Momentum scores to find opportunities matching your criteria.",
     detail: "Use powerful filters to narrow down from stock universe to a focused shortlist.",
     accent: "brand-sky",
   },

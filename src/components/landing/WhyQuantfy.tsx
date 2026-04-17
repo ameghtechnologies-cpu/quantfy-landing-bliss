@@ -104,7 +104,7 @@ const WhyQuantfy = () => {
           viewport={{ once: true }}
           className="text-center rounded-2xl border border-brand-sky/20 bg-gradient-to-r from-brand-sky/5 via-card to-brand-amber/5 p-8"
         >
-          <h3 className="font-sans font-bold text-foreground text-lg mb-4">Outcome</h3>
+          <h3 className="font-sans font-bold text-foreground text-lg mb-4">Outcome After QuanTfy</h3>
           <div className="flex flex-wrap justify-center gap-6">
             {outcomes.map((o, i) => (
               <span key={i} className="text-sm font-semibold text-brand-sky">

@@ -1,6 +1,9 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Check } from "lucide-react";
 import icon from "@/assets/quantfy-icon.png";
+import heroUniverse from "@/assets/hero-universe.jpg";
+import heroStockDetail from "@/assets/hero-stock-detail.jpg";
+import heroAnalytics from "@/assets/hero-analytics.jpg";
 
 const containerVariants = {
   hidden: {},
@@ -19,6 +22,12 @@ const checkpoints = [
   "Momentum Demystified",
   "Leaders Identified",
   "Price Action Clarified",
+];
+
+const previews = [
+  { src: heroUniverse, label: "quantfy.in/universe", caption: "Universe — search & sort 1500+ stocks" },
+  { src: heroStockDetail, label: "quantfy.in/stock", caption: "Stock detail — QGVise & MomentoScope" },
+  { src: heroAnalytics, label: "quantfy.in/analytics", caption: "Deep analytics — fundamentals at a glance" },
 ];
 
 const Hero = () => {
@@ -125,61 +134,50 @@ const Hero = () => {
         </motion.div>
       </motion.div>
 
-      {/* App preview mockup with parallax-like entrance */}
+      {/* Three app preview mockups */}
       <motion.div
-        initial={{ opacity: 0, y: 80, scale: 0.95 }}
-        animate={{ opacity: 1, y: 0, scale: 1 }}
+        initial={{ opacity: 0, y: 80 }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.6, ease: "easeOut" }}
-        className="relative z-10 mt-20 max-w-4xl w-full"
+        className="relative z-10 mt-20 max-w-6xl w-full"
       >
-        <div className="relative">
-          {/* Glow behind the card */}
-          <div className="absolute -inset-4 bg-gradient-to-b from-brand-sky/10 via-transparent to-brand-amber/10 rounded-3xl blur-2xl" />
-
-          <div className="relative bg-card rounded-2xl border border-border shadow-xl p-6 md:p-8">
-            {/* Browser chrome dots */}
-            <div className="flex items-center justify-between mb-6">
-              <div className="flex items-center gap-2">
-                <div className="w-3 h-3 rounded-full bg-brand-red/60" />
-                <div className="w-3 h-3 rounded-full bg-brand-amber/60" />
-                <div className="w-3 h-3 rounded-full bg-brand-sky/60" />
-              </div>
-              <div className="text-xs text-muted-foreground font-mono px-3 py-1 rounded-md bg-muted">
-                quantfy.in/universe
-              </div>
-              <div />
-            </div>
-
-            {/* Mock stock rows */}
-            <div className="space-y-3">
-              {[
-                { name: "Aarti Industries", score: 50, quality: "HIGH PRIME", growth: "LAGGARD", pe: "Low (16.1)", color: "text-brand-sky" },
-                { name: "3M India Ltd", score: 42, quality: "MID PRIME", growth: "ACHIEVER", pe: "Moderate (38.2)", color: "text-brand-amber" },
-                { name: "Infosys Ltd", score: 78, quality: "HIGH PRIME", growth: "COMPOUNDER", pe: "Reasonable (22.4)", color: "text-brand-sky" },
-              ].map((stock, i) => (
-                <motion.div
-                  key={stock.name}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 1.0 + i * 0.15 }}
-                  className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 p-4 rounded-xl bg-background border border-border hover:border-brand-sky/30 transition-all duration-300 hover:shadow-sm"
-                >
-                  <div>
-                    <p className="font-medium text-sm text-foreground">{stock.name}</p>
-                    <div className="flex gap-3 mt-1 text-xs text-muted-foreground">
-                      <span className={stock.color}>{stock.quality}</span>
-                      <span className="text-brand-amber">{stock.growth}</span>
-                      <span>{stock.pe}</span>
-                    </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {previews.map((p, i) => (
+            <motion.div
+              key={p.label}
+              initial={{ opacity: 0, y: 40, scale: 0.95 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              transition={{ duration: 0.7, delay: 0.8 + i * 0.15, ease: "easeOut" }}
+              whileHover={{ y: -6, transition: { duration: 0.25 } }}
+              className="relative"
+            >
+              <div className="absolute -inset-3 bg-gradient-to-b from-brand-sky/10 via-transparent to-brand-amber/10 rounded-3xl blur-2xl" />
+              <div className="relative bg-card rounded-2xl border border-border shadow-xl overflow-hidden">
+                {/* Browser chrome */}
+                <div className="flex items-center justify-between px-4 py-3 border-b border-border bg-card">
+                  <div className="flex items-center gap-1.5">
+                    <div className="w-2.5 h-2.5 rounded-full bg-brand-red/60" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-brand-amber/60" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-brand-sky/60" />
                   </div>
-                  <div className="text-right">
-                    <span className="text-xs text-muted-foreground">QGVise Score</span>
-                    <p className="font-semibold text-foreground">{stock.score}/100</p>
+                  <div className="text-[10px] text-muted-foreground font-mono px-2 py-0.5 rounded bg-muted truncate max-w-[60%]">
+                    {p.label}
                   </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
+                  <div className="w-8" />
+                </div>
+                {/* Screenshot */}
+                <div className="aspect-square bg-background overflow-hidden">
+                  <img
+                    src={p.src}
+                    alt={p.caption}
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+              <p className="text-xs text-muted-foreground mt-3 text-center">{p.caption}</p>
+            </motion.div>
+          ))}
         </div>
       </motion.div>
     </section>
