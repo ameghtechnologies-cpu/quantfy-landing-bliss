@@ -7,7 +7,6 @@ import WhoIsItFor from "@/components/landing/WhoIsItFor";
 import HowItWorks from "@/components/landing/HowItWorks";
 import WhyQuantfy from "@/components/landing/WhyQuantfy";
 import Stats from "@/components/landing/Stats";
-import Videos from "@/components/landing/Videos";
 import Testimonials from "@/components/landing/Testimonials";
 import Pricing from "@/components/landing/Pricing";
 import FAQ from "@/components/landing/FAQ";
@@ -24,9 +23,8 @@ const Index = () => {
       <WhoIsItFor />
       <HowItWorks />
       <WhyQuantfy />
-      <Stats />
-      <Videos />
-      <Testimonials />
+        <Stats />
+        <Testimonials />
       <Pricing />
       <FAQ />
       <Footer />

@@ -1,9 +1,8 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Check } from "lucide-react";
 import icon from "@/assets/quantfy-icon.png";
-import heroUniverse from "@/assets/hero-universe.jpg";
-import heroStockDetail from "@/assets/hero-stock-detail.jpg";
-import heroAnalytics from "@/assets/hero-analytics.jpg";
+
+const YOUTUBE_ID = "oGNcnV_3Pko";
 
 const containerVariants = {
   hidden: {},
@@ -22,12 +21,6 @@ const checkpoints = [
   "Momentum Demystified",
   "Leaders Identified",
   "Price Action Clarified",
-];
-
-const previews = [
-  { src: heroUniverse, label: "quantfy.in/universe", caption: "Universe — search & sort 1500+ stocks" },
-  { src: heroStockDetail, label: "quantfy.in/stock", caption: "Stock detail — QGVise & MomentoScope" },
-  { src: heroAnalytics, label: "quantfy.in/analytics", caption: "Deep analytics — fundamentals at a glance" },
 ];
 
 const Hero = () => {
@@ -134,50 +127,26 @@ const Hero = () => {
         </motion.div>
       </motion.div>
 
-      {/* Three app preview mockups */}
+      {/* Embedded demo video */}
       <motion.div
         initial={{ opacity: 0, y: 80 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.6, ease: "easeOut" }}
-        className="relative z-10 mt-20 max-w-6xl w-full"
+        className="relative z-10 mt-20 max-w-5xl w-full"
       >
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {previews.map((p, i) => (
-            <motion.div
-              key={p.label}
-              initial={{ opacity: 0, y: 40, scale: 0.95 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              transition={{ duration: 0.7, delay: 0.8 + i * 0.15, ease: "easeOut" }}
-              whileHover={{ y: -6, transition: { duration: 0.25 } }}
-              className="relative"
-            >
-              <div className="absolute -inset-3 bg-gradient-to-b from-brand-sky/10 via-transparent to-brand-amber/10 rounded-3xl blur-2xl" />
-              <div className="relative bg-card rounded-2xl border border-border shadow-xl overflow-hidden">
-                {/* Browser chrome */}
-                <div className="flex items-center justify-between px-4 py-3 border-b border-border bg-card">
-                  <div className="flex items-center gap-1.5">
-                    <div className="w-2.5 h-2.5 rounded-full bg-brand-red/60" />
-                    <div className="w-2.5 h-2.5 rounded-full bg-brand-amber/60" />
-                    <div className="w-2.5 h-2.5 rounded-full bg-brand-sky/60" />
-                  </div>
-                  <div className="text-[10px] text-muted-foreground font-mono px-2 py-0.5 rounded bg-muted truncate max-w-[60%]">
-                    {p.label}
-                  </div>
-                  <div className="w-8" />
-                </div>
-                {/* Screenshot */}
-                <div className="aspect-square bg-background overflow-hidden">
-                  <img
-                    src={p.src}
-                    alt={p.caption}
-                    className="w-full h-full object-cover"
-                    loading="lazy"
-                  />
-                </div>
-              </div>
-              <p className="text-xs text-muted-foreground mt-3 text-center">{p.caption}</p>
-            </motion.div>
-          ))}
+        <div className="relative">
+          <div className="absolute -inset-4 bg-gradient-to-b from-brand-sky/10 via-transparent to-brand-amber/10 rounded-3xl blur-2xl" />
+          <div className="relative bg-card rounded-2xl border border-border shadow-xl overflow-hidden">
+            <div className="aspect-video">
+              <iframe
+                src={`https://www.youtube.com/embed/${YOUTUBE_ID}`}
+                title="QuanTfy demo"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="w-full h-full"
+              />
+            </div>
+          </div>
         </div>
       </motion.div>
     </section>
