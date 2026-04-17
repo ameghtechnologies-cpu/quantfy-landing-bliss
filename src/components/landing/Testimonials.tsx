@@ -3,13 +3,13 @@ import { Quote } from "lucide-react";
 
 const testimonials = [
   {
-    name: "Dr. Jiagr Parekh",
-    role: "Rajkot",
+    name: "Dr. J Delwadiya",
+    role: "Morbi",
     text: "QuanTfy's QGVise score saves me hours of research. I can quickly shortlist quality stocks without drowning in spreadsheets.",
     accent: "from-brand-sky to-brand-sky/60",
   },
   {
-    name: "Kapesh Shah",
+    name: "Dr. Kalpesh Shah",
     role: "Ahmedabad",
     text: "MomentoScope is a game-changer. I finally have a reliable momentum indicator that's designed for Indian markets.",
     accent: "from-brand-amber to-brand-amber/60",
