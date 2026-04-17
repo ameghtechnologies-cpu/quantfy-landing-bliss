@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Check } from "lucide-react";
 import icon from "@/assets/quantfy-icon.png";
 
-const YOUTUBE_ID = "oGNcnV_3Pko";
+const YOUTUBE_ID = "BVTDBnDzu8g";
 
 const containerVariants = {
   hidden: {},
