@@ -5,7 +5,7 @@ const features = [
   {
     icon: Search,
     title: "Universe Search",
-    description: "Browse and search across > 1400 Indian companies, ETFs & indices in one place.",
+    description: "Browse and search across > 1500 Indian companies, ETFs & indices in one place.",
     gradient: "from-brand-sky/20 to-brand-navy/10",
     iconColor: "text-brand-sky",
   },
