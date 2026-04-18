@@ -9,27 +9,27 @@ import {
 const faqs = [
   {
     q: "Is QuanTfy an app I need to install?",
-    a: "No. It is a web app that runs smoothly on any device using your browser. It can be saved as a web app (shortcut) on your device screen with just a click.",
+    a: "No. It's a web app that runs on any browser. Save it as a shortcut on your device.",
   },
   {
     q: "Does QuanTfy give buy/sell tips?",
-    a: "No. QuanTfy provides quantified scores and analysis to guide YOUR decisions, not recommendations. It helps you understand the fundamentals and momentum of stocks so you can make informed choices.",
+    a: "No. It provides scores and analysis to guide YOUR decisions, not recommendations.",
   },
   {
     q: "How often is data updated?",
-    a: "QGVise scores update quarterly with results. MomentoScope updates every week, giving you fresh momentum insights consistently.",
+    a: "QGVise updates quarterly. MomentoScope updates weekly.",
   },
   {
     q: "Will beginners understand it?",
-    a: "Absolutely. QuanTfy is designed to be clear and simple while offering professional-grade structure. Whether you're just starting or experienced, it meets you where you are.",
+    a: "Yes. Designed to be clear and simple while offering professional-grade structure.",
   },
   {
-    q: "What does the QGVise Score measure?",
-    a: "QGVise transforms over 50 data points spanning balance sheet, income, cash flow & holding statements into a precise numerical score out of 100. It covers Quality, Growth, Valuation, and Shareholding dimensions.",
+    q: "What does QGVise Score measure?",
+    a: "A score (0-100) from 50+ data points covering quality, growth, valuation, and shareholding.",
   },
   {
     q: "What is MomentoScope?",
-    a: "MomentoScope simplifies complex technical data by transforming various momentum parameters into a single, actionable MomentoScore. It's updated weekly to help you spot trend shifts.",
+    a: "Transforms momentum parameters into a single actionable score. Updated weekly.",
   },
 ];
 

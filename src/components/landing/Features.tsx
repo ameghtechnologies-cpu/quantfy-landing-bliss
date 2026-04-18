@@ -5,42 +5,42 @@ const features = [
   {
     icon: Search,
     title: "Universe Search",
-    description: "Browse and search across > 1500 Indian companies, ETFs & indices in one place.",
+    description: "Browse 1500+ Indian companies, ETFs & indices in one place.",
     gradient: "from-brand-sky/20 to-brand-navy/10",
     iconColor: "text-brand-sky",
   },
   {
     icon: ArrowUpDown,
-    title: "Sort Options",
-    description: "Sort companies by QGVise score, Market Cap, PE, Momentum and more to find the best picks fast.",
+    title: "Sort & Filter",
+    description: "By QGVise score, market cap, PE, momentum, and more.",
     gradient: "from-brand-amber/15 to-brand-amber/5",
     iconColor: "text-brand-amber",
   },
   {
     icon: GitCompareArrows,
     title: "Transition Filter",
-    description: "Track changes in fundamentals & momentum in just one click.",
+    description: "Track fundamental and momentum changes instantly.",
     gradient: "from-brand-sky/15 to-accent/5",
     iconColor: "text-brand-sky",
   },
   {
     icon: Filter,
     title: "Smart Filters",
-    description: "Filter by index, sector, industry, quality, growth, valuations and more.",
+    description: "Index, sector, industry, quality, growth, valuation.",
     gradient: "from-brand-navy/15 to-brand-sky/5",
     iconColor: "text-brand-amber",
   },
   {
     icon: PieChart,
     title: "Deep Analysis",
-    description: "Profitability, solvency, cash flow, balance sheet, income quality — all in one view.",
+    description: "Profitability, solvency, cash flow, balance sheet — all visible.",
     gradient: "from-brand-amber/10 to-brand-sky/10",
     iconColor: "text-brand-sky",
   },
   {
     icon: Shield,
     title: "Shareholding Insights",
-    description: "Promoter, FII, DII & public holding trends with pledge tracking across quarters.",
+    description: "Promoter, FII, DII trends with pledge tracking.",
     gradient: "from-brand-sky/20 to-brand-sky/5",
     iconColor: "text-brand-amber",
   },
@@ -50,22 +50,22 @@ const keyBenefits = [
   {
     icon: Sparkles,
     title: "Converts Chaos into Clarity",
-    description: "No more jumping between websites or building complex spreadsheets. Everything you need is quantified and ready.",
+    description: "No more scattered data. Everything quantified and ready.",
   },
   {
     icon: Zap,
     title: "Saves Massive Time",
-    description: "Understand a company's fundamentals, momentum & price action profile in minutes, not hours.",
+    description: "Understand a company in minutes, not hours.",
   },
   {
     icon: BarChart3,
     title: "Complete Techno-Funda View",
-    description: "The one of its kind tool combining fundamental quality and momentum strength in one structured format.",
+    description: "Fundamentals + momentum + price action in one format.",
   },
   {
     icon: Search,
     title: "For Everyone",
-    description: "Whether you're just starting or you're experienced, QuanTfy meets you where you are with a warm, guided experience.",
+    description: "Beginner-friendly or experienced — meets you where you are.",
   },
 ];
 
@@ -91,7 +91,7 @@ const Features = () => {
             Everything you need to analyse stocks
           </h2>
           <p className="text-muted-foreground max-w-lg mx-auto">
-            Quantified scores and filters so you can quickly find candidates for further analysis.
+            Quantified scores and filters to quickly find candidates.
           </p>
         </motion.div>
 

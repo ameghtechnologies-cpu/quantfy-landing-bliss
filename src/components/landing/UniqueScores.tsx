@@ -8,7 +8,7 @@ const scores = [
     title: "QGVise Score",
     subtitle: "Fundamentals at a Glance",
     description:
-      "A composite score out of 100 combining quality, growth, valuation & shareholding from 50+ data points. Instantly understand if a stock deserves your attention.",
+      "Composite score (0-100) from 50+ data points: quality, growth, valuation, shareholding.",
     gradient: "from-brand-amber/20 via-brand-amber/5 to-transparent",
     iconColor: "text-brand-amber",
     bgAccent: "bg-brand-amber/8",
@@ -19,7 +19,7 @@ const scores = [
     title: "MomentoScope",
     subtitle: "Momentum Demystified",
     description:
-      "Track weekly momentum metrics to spot trend shifts and entry/exit opportunities. Combines price action and leaderboard score to get a clear weekly signal.",
+      "Weekly momentum metrics with trend shifts and entry/exit signals.",
     gradient: "from-brand-sky/20 via-brand-sky/5 to-transparent",
     iconColor: "text-brand-sky",
     bgAccent: "bg-brand-sky/8",
@@ -30,7 +30,7 @@ const scores = [
     title: "Price Action Score",
     subtitle: "Price Volume Strength",
     description:
-      "Measure a stock's price volume action to quickly gauge that in correlation with Momentum.",
+      "Gauge price-volume correlation with momentum.",
     gradient: "from-brand-amber/20 via-brand-navy/5 to-transparent",
     iconColor: "text-brand-amber",
     bgAccent: "bg-brand-amber/8",
@@ -41,7 +41,7 @@ const scores = [
     title: "Leaderboard Score",
     subtitle: "Market Leadership",
     description:
-      "Easily identify Market, Sector and Industry leaders.",
+      "Identify market, sector, and industry leaders at a glance.",
     gradient: "from-brand-sky/20 via-brand-navy/5 to-transparent",
     iconColor: "text-brand-sky",
     bgAccent: "bg-brand-sky/8",
@@ -85,7 +85,7 @@ const UniqueScores = () => {
             Four scores that define every stock
           </h2>
           <p className="text-muted-foreground max-w-lg mx-auto">
-            Unique scoring systems built from the ground up to give you an edge in Indian markets.
+            Unique scoring systems built for Indian markets.
           </p>
         </motion.div>
 

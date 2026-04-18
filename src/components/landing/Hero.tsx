@@ -76,10 +76,10 @@ const Hero = () => {
           variants={itemVariants}
           className="text-5xl md:text-6xl lg:text-7xl font-serif leading-tight mb-6"
         >
-          <span className="text-foreground">Stock analysis</span>
+          <span className="text-foreground">Your Technofunda</span>
           <br />
           <span className="bg-gradient-to-r from-brand-sky via-brand-amber to-brand-red bg-clip-text text-transparent">
-            at ease.
+            Edge.
           </span>
         </motion.h1>
 
@@ -88,7 +88,7 @@ const Hero = () => {
           variants={itemVariants}
           className="text-lg md:text-xl text-muted-foreground mb-8 max-w-xl leading-relaxed"
         >
-          A web app delivering clarity through quantified analysis — designed to save time and bring confidence to every investing decision.
+          Stock analysis at ease. Quantified analysis, designed for confident investing & trading decisions.
         </motion.p>
 
         {/* Checkpoints */}
