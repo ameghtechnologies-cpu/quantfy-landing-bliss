@@ -2,19 +2,18 @@ import { motion } from "framer-motion";
 import { Check, X } from "lucide-react";
 
 const canDo = [
-  { title: "See the full picture, instantly", desc: "Combine fundamentals, momentum, price action, and market leadership in a single view. No fragmentation. No guesswork." },
-  { title: "Build high-conviction watchlists", desc: "Identify stocks that meet multiple criteria across growth, strength, and leadership within seconds." },
-  { title: "Track sector and industry leadership", desc: "Spot where capital is moving. Identify emerging leaders and rotation early." },
-  { title: "Make clear entry and exit decisions", desc: "Reduce hesitation. Act with structured, data-backed signals across stocks and ETFs." },
-  { title: "Monitor what actually matters", desc: "Stay updated on changes in growth trends and shareholding patterns without manual tracking." },
+  { title: "See the full picture instantly", desc: "Fundamentals + momentum + price action in one view." },
+  { title: "Build conviction-backed watchlists in seconds", desc: "Identify stocks meeting multiple criteria within seconds." },
+  { title: "Track sector and industry rotation early", desc: "Spot where capital is moving and identify emerging leaders." },
+  { title: "Make clear entry and exit decisions", desc: "Act with structured, data-backed signals." },
+  { title: "Monitor what actually matters without manual tracking", desc: "Stay updated on key changes automatically." },
 ];
 
 const dontNeed = [
-  { title: "No deep technical analysis required", desc: "Skip complex chart reading and indicators." },
-  { title: "No deep fundamental analysis required", desc: "No need to dissect balance sheets, ratios, or lengthy reports." },
-  { title: "No switching between multiple platforms", desc: "Everything is integrated into one system." },
-  { title: "No manual tracking of results or concalls", desc: "Key changes are already captured and simplified." },
-  { title: "No daily market overload", desc: "Focus only on what is relevant. Ignore the noise." },
+  { title: "Deep technical or fundamental analysis", desc: "Skip complex chart reading and balance sheet dissection." },
+  { title: "Switch between multiple platforms", desc: "Everything is integrated into one system." },
+  { title: "Manually track results and earnings calls", desc: "Key changes are already captured and simplified." },
+  { title: "Sift through daily market noise", desc: "Focus only on what is relevant." },
 ];
 
 const outcomes = [

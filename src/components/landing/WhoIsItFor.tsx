@@ -37,7 +37,7 @@ const WhoIsItFor = () => {
               <Bell className="w-4 h-4 text-brand-sky" />
             </div>
             <h3 className="font-sans font-bold text-foreground text-xl mb-1">Retail Investors</h3>
-            <p className="text-sm text-muted-foreground leading-relaxed">Make confident stock picks backed by data, not noise.</p>
+            <p className="text-sm text-muted-foreground leading-relaxed">Data-backed stock picks. No noise.</p>
           </motion.div>
 
           {/* Swing Traders — col 6-12, row 1 */}
@@ -57,7 +57,7 @@ const WhoIsItFor = () => {
               <TrendingUp className="w-4 h-4 text-brand-sky" />
             </div>
             <h3 className="font-sans font-bold text-foreground text-xl mb-1">Swing Traders</h3>
-            <p className="text-sm text-muted-foreground leading-relaxed">Spot momentum shifts early with MomentoScope.</p>
+            <p className="text-sm text-muted-foreground leading-relaxed">Spot momentum shifts early.</p>
           </motion.div>
 
           {/* Financial Advisors — col 1-7, row 3 */}
@@ -77,7 +77,7 @@ const WhoIsItFor = () => {
               <Briefcase className="w-4 h-4 text-brand-amber" />
             </div>
             <h3 className="font-sans font-bold text-foreground text-xl mb-1">Financial Advisors</h3>
-            <p className="text-sm text-muted-foreground leading-relaxed">Screen and shortlist stocks faster for your clients.</p>
+            <p className="text-sm text-muted-foreground leading-relaxed">Screen and shortlist stocks faster for clients.</p>
           </motion.div>
 
           {/* Students & Learners — col 8-12, row 2-3 */}
@@ -97,7 +97,7 @@ const WhoIsItFor = () => {
               <BookOpen className="w-4 h-4 text-brand-sky" />
             </div>
             <h3 className="font-sans font-bold text-foreground text-lg mb-1">Students & Learners</h3>
-            <p className="text-sm text-muted-foreground leading-relaxed">Understand fundamentals through intuitive scores and visuals.</p>
+            <p className="text-sm text-muted-foreground leading-relaxed">Understand fundamentals through intuitive scores.</p>
           </motion.div>
 
           {/* Center Q logo in the interlocking gap */}

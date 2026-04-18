@@ -5,19 +5,19 @@ const testimonials = [
   {
     name: "Dr. J Delwadiya",
     role: "Morbi",
-    text: "QuanTfy's QGVise score saves me hours of research. I can quickly shortlist quality stocks without drowning in spreadsheets.",
+    text: "QuanTfy's QGVise score saves me hours of research. I can shortlist quality stocks without drowning in spreadsheets.",
     accent: "from-brand-sky to-brand-sky/60",
   },
   {
     name: "Dr. Kalpesh Shah",
     role: "Ahmedabad",
-    text: "MomentoScope is a game-changer. I finally have a reliable momentum indicator that's designed for Indian markets.",
+    text: "MomentoScope is a game-changer. A reliable momentum indicator built for Indian markets.",
     accent: "from-brand-amber to-brand-amber/60",
   },
   {
     name: "Suresh Agarwal",
     role: "Lucknow",
-    text: "The scoring system is incredibly well thought out. It gives me a clear, quantified approach to stock analysis that I can trust.",
+    text: "The scoring system is incredibly well thought out. A clear, quantified approach I can trust.",
     accent: "from-brand-sky to-brand-amber",
   },
 ];

@@ -5,29 +5,29 @@ const steps = [
   {
     num: "01",
     title: "Screen Smartly",
-    description: "Filter 1500+ companies by Quality, Growth, Valuation, or Momentum scores to find opportunities matching your criteria.",
+    description: "Filter 1500+ companies by quality, growth, valuation, or momentum to find opportunities.",
     detail: "Use powerful filters to narrow down from stock universe to a focused shortlist.",
     accent: "brand-sky",
   },
   {
     num: "02",
     title: "Understand Instantly",
-    description: "Open any company to see clear QGVise scores and weekly MomentoScope trends at a glance.",
-    detail: "Each company page shows a clean dashboard with all four proprietary scores, key financial metrics, and trend indicators — no information overload, just what matters.",
+    description: "See QGVise scores and MomentoScope trends at a glance. All key metrics on one dashboard.",
+    detail: "A clean dashboard with all four proprietary scores, key financial metrics, and trend indicators — no information overload.",
     accent: "brand-amber",
   },
   {
     num: "03",
     title: "Explore Deeply",
-    description: "Use structured tabs for detailed fundamentals and momentum analysis when you need more context.",
-    detail: "Dive into quarterly results, shareholding patterns, and MomentoScope charts. Every data point is organized in clear tabs so you find what you need fast.",
+    description: "Structured tabs for detailed fundamentals, momentum, and shareholding analysis.",
+    detail: "Dive into quarterly results, shareholding patterns, and MomentoScope charts. Every data point is organized in clear tabs.",
     accent: "brand-sky",
   },
   {
     num: "04",
     title: "Monitor with Ease",
-    description: "Weekly and quarterly updates keep your watchlist fresh and meaningful without overwhelming you.",
-    detail: "Add stocks to your watchlist and get updated scores every week. Quarterly recalculations ensure you're always working with the latest fundamentals.",
+    description: "Weekly and quarterly updates keep your watchlist fresh without overload.",
+    detail: "Add stocks to your watchlist and get updated scores every week. Quarterly recalculations keep fundamentals current.",
     accent: "brand-amber",
   },
 ];
@@ -52,7 +52,7 @@ const HowItWorks = () => {
             How it works
           </h2>
           <p className="text-muted-foreground max-w-lg mx-auto">
-            From screening to monitoring — four simple steps to smarter investing.
+            Four simple steps to smarter investing.
           </p>
         </motion.div>
 

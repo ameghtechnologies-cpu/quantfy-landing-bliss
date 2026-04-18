@@ -9,18 +9,18 @@ const plans = [
     perMonth: "₹1,000/mo",
   },
   {
-    name: "6 Months",
+    name: "Akshay Tritiya Offer · 6 Months",
     price: "₹5,500",
-    period: "for 6 months",
-    perMonth: "₹917/mo",
+    period: "+ 2 Months Free",
+    perMonth: "₹688/mo",
+    popular: true,
+    savings: "Best Value",
   },
   {
     name: "1 Year",
     price: "₹10,000",
     period: "for 1 year",
     perMonth: "₹833/mo",
-    popular: true,
-    savings: "Save 17%",
   },
 ];
 
@@ -41,7 +41,7 @@ const Pricing = () => {
           <h2 className="text-3xl md:text-4xl font-serif text-foreground mb-4">
             Simple, transparent pricing
           </h2>
-          <p className="text-muted-foreground">All plans include every feature. Pick the duration that suits you.</p>
+          <p className="text-muted-foreground">All plans include every feature.</p>
         </motion.div>
 
         {/* Plan cards */}
@@ -83,17 +83,20 @@ const Pricing = () => {
                 <p className="text-xs font-semibold text-brand-amber mb-4">{plan.savings}</p>
               )}
 
-              <motion.button
+              <motion.a
+                href="https://forms.gle/XcodJmZunepi3Utv7"
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className={`w-full py-3 rounded-full text-sm font-medium transition-all duration-300 ${
+                className={`block text-center w-full py-3 rounded-full text-sm font-medium transition-all duration-300 ${
                   plan.popular
                     ? "bg-brand-sky text-foreground hover:shadow-md hover:shadow-brand-sky/20"
                     : "bg-primary text-primary-foreground hover:shadow-md hover:shadow-primary/20"
                 }`}
               >
                 Get started
-              </motion.button>
+              </motion.a>
             </motion.div>
           ))}
         </div>

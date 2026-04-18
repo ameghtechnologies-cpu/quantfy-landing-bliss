@@ -4,16 +4,16 @@ import { X, Check } from "lucide-react";
 
 const oldWay = [
   "Scattered data across multiple sources",
-  "Complicated spreadsheets and confusing ratios",
-  "Hours spent making sense of numbers",
-  "Difficult to compare companies consistently",
+  "Confusing spreadsheets and contradictory ratios",
+  "Hours wasted making sense of numbers",
+  "No consistent comparison framework",
   "Analysis paralysis from information overload",
 ];
 
 const newWay = [
   "Clean, actionable scores in one place",
   "Simple frameworks you can trust",
-  "Research time cut by 5x",
+  "5x faster research time",
   "Easy comparison across 1500+ stocks",
   "Clarity and confidence in every decision",
 ];
