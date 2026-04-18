@@ -41,6 +41,16 @@ const Pricing = () => {
           <p className="text-muted-foreground max-w-2xl mx-auto">
             All plans include every feature and are bundled with Stock Tradevesting Education & Mentorship (STREAM) Program.
           </p>
+          <motion.a
+            href="https://stream-bqt9bou.gamma.site/"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.03 }}
+            whileTap={{ scale: 0.98 }}
+            className="inline-block mt-6 px-6 py-2.5 rounded-full text-sm font-medium border border-brand-sky/40 text-foreground bg-brand-sky/5 hover:bg-brand-sky/10 hover:border-brand-sky/60 transition-all duration-300"
+          >
+            Know More About STREAM
+          </motion.a>
         </motion.div>
 
         {/* Plan cards */}
