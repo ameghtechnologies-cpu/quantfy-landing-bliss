@@ -60,7 +60,14 @@ const Pricing = () => {
               }`}
             >
               {plan.popular && (
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-sky via-brand-amber to-brand-sky" />
+                <>
+                  <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-sky via-brand-amber to-brand-sky" />
+                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-10">
+                    <span className="inline-flex items-center gap-1 text-[10px] uppercase tracking-widest font-semibold bg-brand-amber text-foreground px-4 py-1.5 rounded-full shadow-md">
+                      <Star size={10} /> Best Value
+                    </span>
+                  </div>
+                </>
               )}
 
               <h3 className="font-sans font-semibold text-lg mb-1">{plan.name}</h3>
@@ -69,8 +76,8 @@ const Pricing = () => {
               </div>
               <p className="text-xs mb-4 text-muted-foreground">{plan.period}</p>
               {plan.offer && (
-                <div className="mt-2 inline-flex items-center gap-1 text-xs font-semibold bg-brand-amber/15 text-brand-amber border border-brand-amber/30 px-3 py-1.5 rounded-full">
-                  <Star size={12} /> {plan.offer}
+                <div className="mt-2 inline-flex items-center gap-1 text-xs font-bold bg-brand-amber/20 text-foreground border border-brand-amber/50 px-3 py-1.5 rounded-full">
+                  <Star size={12} className="text-brand-amber" /> {plan.offer}
                 </div>
               )}
             </motion.div>
