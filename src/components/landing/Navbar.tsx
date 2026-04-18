@@ -5,8 +5,6 @@ import logo from "@/assets/quantfy-logo.jpg";
 
 const navLinks = [
   { label: "Features", href: "#features" },
-  { label: "Videos", href: "#videos" },
-  { label: "Pricing", href: "#pricing" },
   { label: "FAQ", href: "#faq" },
 ];
 
