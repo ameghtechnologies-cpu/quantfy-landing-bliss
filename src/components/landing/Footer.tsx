@@ -23,8 +23,6 @@ const Footer = () => {
           <div className="flex gap-8">
             {[
               { label: "Features", href: "#features" },
-              { label: "Videos", href: "#videos" },
-              { label: "Pricing", href: "#pricing" },
               { label: "FAQ", href: "#faq" },
             ].map((link) => (
               <a
