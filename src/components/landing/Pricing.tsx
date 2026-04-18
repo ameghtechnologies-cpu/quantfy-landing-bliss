@@ -6,21 +6,18 @@ const plans = [
     name: "3 Months",
     price: "₹3,000",
     period: "for 3 months",
-    perMonth: "₹1,000/mo",
   },
   {
-    name: "Akshay Tritiya Offer · 6 Months",
+    name: "6 Months",
     price: "₹5,500",
-    period: "+ 2 Months Free",
-    perMonth: "₹688/mo",
+    period: "for 6 months",
     popular: true,
-    savings: "Best Value",
+    offer: "Offer : + 2 Months Free",
   },
   {
     name: "1 Year",
     price: "₹10,000",
     period: "for 1 year",
-    perMonth: "₹833/mo",
   },
 ];
 
@@ -41,7 +38,9 @@ const Pricing = () => {
           <h2 className="text-3xl md:text-4xl font-serif text-foreground mb-4">
             Simple, transparent pricing
           </h2>
-          <p className="text-muted-foreground">All plans include every feature.</p>
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            All plans include every feature and are bundled with Stock Tradevesting Education & Mentorship (STREAM) Program.
+          </p>
         </motion.div>
 
         {/* Plan cards */}
@@ -61,45 +60,41 @@ const Pricing = () => {
               }`}
             >
               {plan.popular && (
-                <>
-                  <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-sky via-brand-amber to-brand-sky" />
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-10">
-                    <span className="inline-flex items-center gap-1 text-[10px] uppercase tracking-widest font-semibold bg-brand-amber text-foreground px-4 py-1.5 rounded-full shadow-md">
-                      <Star size={10} /> Best Value
-                    </span>
-                  </div>
-                </>
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-sky via-brand-amber to-brand-sky" />
               )}
 
               <h3 className="font-sans font-semibold text-lg mb-1">{plan.name}</h3>
               <div className="mb-1">
                 <span className="text-3xl font-serif">{plan.price}</span>
               </div>
-              <p className="text-xs mb-1 text-muted-foreground">{plan.period}</p>
-              <p className={`text-xs mb-4 font-medium ${plan.popular ? "text-brand-amber" : "text-brand-sky"}`}>
-                {plan.perMonth}
-              </p>
-              {plan.savings && (
-                <p className="text-xs font-semibold text-brand-amber mb-4">{plan.savings}</p>
+              <p className="text-xs mb-4 text-muted-foreground">{plan.period}</p>
+              {plan.offer && (
+                <div className="mt-2 inline-flex items-center gap-1 text-xs font-semibold bg-brand-amber/15 text-brand-amber border border-brand-amber/30 px-3 py-1.5 rounded-full">
+                  <Star size={12} /> {plan.offer}
+                </div>
               )}
-
-              <motion.a
-                href="https://forms.gle/XcodJmZunepi3Utv7"
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className={`block text-center w-full py-3 rounded-full text-sm font-medium transition-all duration-300 ${
-                  plan.popular
-                    ? "bg-brand-sky text-foreground hover:shadow-md hover:shadow-brand-sky/20"
-                    : "bg-primary text-primary-foreground hover:shadow-md hover:shadow-primary/20"
-                }`}
-              >
-                Get started
-              </motion.a>
             </motion.div>
           ))}
         </div>
+
+        {/* Common CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="flex justify-center mt-12"
+        >
+          <motion.a
+            href="https://forms.gle/XcodJmZunepi3Utv7"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.03 }}
+            whileTap={{ scale: 0.98 }}
+            className="inline-block text-center px-10 py-4 rounded-full text-sm font-medium bg-primary text-primary-foreground hover:shadow-lg hover:shadow-primary/20 transition-all duration-300"
+          >
+            Get started
+          </motion.a>
+        </motion.div>
       </div>
     </section>
   );
